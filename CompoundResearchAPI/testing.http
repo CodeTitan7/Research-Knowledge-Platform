@@ -1,0 +1,118 @@
+@baseUrl = http://localhost:5000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YWI2ODcwYy02ZTIzLTQwNzAtOTI3Ni1jYmZlMTg3NmQ3OTkiLCJlbWFpbCI6ImFkbWluQGNvbXBvdW5kcmVzZWFyY2gubG9jYWwiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiU3lzdGVtIEFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg2NDI4NjAwLCJpc3MiOiJDb21wb3VuZFJlc2VhcmNoQVBJIiwiYXVkIjoiQ29tcG91bmRSZXNlYXJjaEFQSUNsaWVudHMifQ.yj-jzPnzSJifVorl4sXij15WvDomFIIuF42bL6Z9FEI
+
+### ==================== AUTH ====================
+
+### Login as seeded admin
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@compoundresearch.local",
+  "password": "Admin@12345"
+}
+
+### Register a new Research User
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "researcher1@compoundresearch.local",
+  "fullName": "Research User One",
+  "password": "Research@123"
+}
+
+### ==================== COMPOUNDS ====================
+
+### Search / list all compounds
+GET {{baseUrl}}/api/compounds
+Authorization: Bearer {{token}}
+
+### Search compounds by name
+GET {{baseUrl}}/api/compounds?name=Metformin
+Authorization: Bearer {{token}}
+
+### Get single compound by id
+GET {{baseUrl}}/api/compounds/1
+Authorization: Bearer {{token}}
+
+### Create a new compound (Draft status)
+POST {{baseUrl}}/api/compounds
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Sildenafil",
+  "synonym": "Viagra",
+  "description": "PDE5 inhibitor used for erectile dysfunction and pulmonary hypertension.",
+  "molecularFormula": "C22H30N6O4S",
+  "categoryId": null,
+  "targetIds": []
+}
+
+### Review (approve) a compound - Reviewer/Admin only
+POST {{baseUrl}}/api/compounds/4/review
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "approve": true,
+  "comments": "Looks good, approved."
+}
+
+### ==================== QUERY (RAG) ====================
+
+### Ask a question - normal case
+POST {{baseUrl}}/api/query/ask
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "question": "How does Metformin lower blood sugar?"
+}
+
+### Ask a question - edge case (no matching evidence expected)
+POST {{baseUrl}}/api/query/ask
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "question": "What is the melting point of unobtainium-42?"
+}
+
+### ==================== USERS (Admin only) ====================
+
+### List all users
+GET {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+
+### ===Document===
+### Upload document - Metformin mechanism notes
+POST {{baseUrl}}/api/documents/upload
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="File"; filename="metformin_mechanism.txt"
+Content-Type: text/plain
+
+< ./metformin_mechanism.txt
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Title"
+
+Metformin Mechanism Notes
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="RelatedCompoundId"
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### DELETE
+DELETE {{baseUrl}}/api/documents/2
+Authorization: Bearer {{token}}
+
+
+###checking docs
+GET {{baseUrl}}/api/documents
+Authorization: Bearer {{token}}
