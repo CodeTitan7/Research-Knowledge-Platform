@@ -1458,3 +1458,1571 @@ RETURNING "Id";
 2026-08-11 10:34:46.556 +05:30 [INF] POST /api/query/ask responded 200 in 4048ms
 2026-08-11 10:34:46.568 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 4092.2619ms
 2026-08-11 10:38:18.604 +05:30 [INF] Application is shutting down...
+2026-08-11 11:48:01.132 +05:30 [INF] User profile is available. Using 'C:\Users\Sarang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-11 11:48:04.018 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-11 11:48:04.082 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2026-08-11 11:48:04.113 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2026-08-11 06:18:04.1046966+00:00');
+SELECT changes();
+2026-08-11 11:48:04.217 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2026-08-11 11:48:04.248 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2026-08-11 11:48:04.260 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-08-11 11:48:04.280 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-11 11:48:04.286 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2026-08-11 11:48:04.954 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedName='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:48:05.025 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:48:05.029 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:48:05.048 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 28)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @normalizedEmail
+LIMIT 2
+2026-08-11 11:48:05.138 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c")
+2026-08-11 11:48:06.559 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-11 11:48:06.684 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-11 11:48:06.704 +05:30 [INF] Hosting environment: Development
+2026-08-11 11:48:06.710 +05:30 [INF] Content root path: C:\Users\Sarang\Desktop\FrontEnd\Research-Knowledge-Platform\CompoundResearchAPI
+2026-08-11 11:48:26.102 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2026-08-11 11:48:26.279 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:26.333 +05:30 [INF] OPTIONS /api/auth/login responded 204 in 61ms
+2026-08-11 11:48:26.879 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 785.6539ms
+2026-08-11 11:48:26.919 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 65
+2026-08-11 11:48:26.942 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:31.333 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.AuthController.Login (CompoundResearchAPI)'
+2026-08-11 11:48:31.478 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.AuthResponseDto]]] Login(CompoundResearchAPI.Models.DTOs.LoginDto) on controller CompoundResearchAPI.Controllers.AuthController (CompoundResearchAPI).
+2026-08-11 11:48:31.866 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 28)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @normalizedEmail
+LIMIT 2
+2026-08-11 11:48:32.632 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @userId
+2026-08-11 11:48:33.310 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.AuthResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:48:33.399 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.AuthController.Login (CompoundResearchAPI) in 1867.1421ms
+2026-08-11 11:48:33.421 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.AuthController.Login (CompoundResearchAPI)'
+2026-08-11 11:48:33.450 +05:30 [INF] POST /api/auth/login responded 200 in 6511ms
+2026-08-11 11:48:33.568 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 200 null application/json; charset=utf-8 6648.806ms
+2026-08-11 11:48:33.734 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:48:33.735 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:48:33.754 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:33.793 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:33.798 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 44ms
+2026-08-11 11:48:33.801 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 7ms
+2026-08-11 11:48:33.818 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 83.2114ms
+2026-08-11 11:48:33.868 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 133.3013ms
+2026-08-11 11:48:33.928 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:48:34.015 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:34.403 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:48:34.511 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:48:34.955 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:48:34.982 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:48:34.998 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:48:35.020 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:48:35.336 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:48:35.727 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:48:35.753 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 1216.565ms
+2026-08-11 11:48:35.758 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:48:35.769 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:48:35.791 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:35.799 +05:30 [INF] GET /api/dashboard/stats responded 200 in 1784ms
+2026-08-11 11:48:35.836 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:48:35.837 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 1909.6313ms
+2026-08-11 11:48:35.852 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:48:35.890 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:48:35.925 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:48:35.935 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:48:35.951 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:48:35.966 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:48:35.980 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:48:35.995 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 115.5028ms
+2026-08-11 11:48:36.012 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:48:36.020 +05:30 [INF] GET /api/dashboard/stats responded 200 in 229ms
+2026-08-11 11:48:36.052 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 294.8148ms
+2026-08-11 11:48:41.041 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - null null
+2026-08-11 11:48:41.042 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - null null
+2026-08-11 11:48:41.051 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:41.067 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:41.069 +05:30 [INF] OPTIONS /api/users responded 204 in 18ms
+2026-08-11 11:48:41.076 +05:30 [INF] OPTIONS /api/users responded 204 in 8ms
+2026-08-11 11:48:41.086 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - 204 null null 44.0851ms
+2026-08-11 11:48:41.096 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - 204 null null 54.3041ms
+2026-08-11 11:48:41.114 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users - null null
+2026-08-11 11:48:41.145 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:41.158 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.UsersController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:41.184 +05:30 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetAll() on controller CompoundResearchAPI.Controllers.UsersController (CompoundResearchAPI).
+2026-08-11 11:48:41.263 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+2026-08-11 11:48:41.284 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @userId
+2026-08-11 11:48:41.300 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @userId
+2026-08-11 11:48:41.314 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:41.343 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.UsersController.GetAll (CompoundResearchAPI) in 149.9568ms
+2026-08-11 11:48:41.346 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users - null null
+2026-08-11 11:48:41.349 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.UsersController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:41.365 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:41.371 +05:30 [INF] GET /api/users responded 200 in 225ms
+2026-08-11 11:48:41.380 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.UsersController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:41.385 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users - 200 null application/json; charset=utf-8 270.5206ms
+2026-08-11 11:48:41.393 +05:30 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetAll() on controller CompoundResearchAPI.Controllers.UsersController (CompoundResearchAPI).
+2026-08-11 11:48:41.444 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+2026-08-11 11:48:41.471 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @userId
+2026-08-11 11:48:41.494 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @userId
+2026-08-11 11:48:41.806 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:41.817 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.UsersController.GetAll (CompoundResearchAPI) in 403.5903ms
+2026-08-11 11:48:41.875 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.UsersController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:41.881 +05:30 [INF] GET /api/users responded 200 in 515ms
+2026-08-11 11:48:41.891 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users - 200 null application/json; charset=utf-8 545.3181ms
+2026-08-11 11:48:45.714 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:48:45.719 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:48:45.724 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:48:45.727 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:48:45.781 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:45.814 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:45.821 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:45.839 +05:30 [INF] OPTIONS /api/categories responded 204 in 18ms
+2026-08-11 11:48:45.832 +05:30 [INF] OPTIONS /api/compounds responded 204 in 50ms
+2026-08-11 11:48:45.835 +05:30 [INF] OPTIONS /api/targets responded 204 in 20ms
+2026-08-11 11:48:45.829 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:45.850 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 125.6094ms
+2026-08-11 11:48:45.862 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 148.4857ms
+2026-08-11 11:48:45.869 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 150.2992ms
+2026-08-11 11:48:45.878 +05:30 [INF] OPTIONS /api/compounds responded 204 in 48ms
+2026-08-11 11:48:45.896 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:48:45.913 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:48:45.935 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:48:45.936 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 209.3553ms
+2026-08-11 11:48:45.946 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:45.957 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:45.970 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:46.000 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:48:46.007 +05:30 [INF] OPTIONS /api/targets responded 204 in 59ms
+2026-08-11 11:48:46.013 +05:30 [INF] OPTIONS /api/categories responded 204 in 55ms
+2026-08-11 11:48:46.018 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.046 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:46.058 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 159.732ms
+2026-08-11 11:48:46.071 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 157.7209ms
+2026-08-11 11:48:46.100 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:48:46.131 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:48:46.171 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:48:46.268 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:46.281 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:48:46.286 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:48:46.295 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.337 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:46.392 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:48:46.452 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:48:46.494 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:46.558 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 321.8749ms
+2026-08-11 11:48:46.558 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 140.3141ms
+2026-08-11 11:48:46.562 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:48:46.570 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:48:46.579 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.587 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.609 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:46.633 +05:30 [INF] GET /api/categories responded 200 in 663ms
+2026-08-11 11:48:46.642 +05:30 [INF] GET /api/targets responded 200 in 374ms
+2026-08-11 11:48:46.646 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.663 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 727.6471ms
+2026-08-11 11:48:46.683 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 512.4377ms
+2026-08-11 11:48:46.690 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:48:46.691 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:46.707 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:48:46.742 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:48:46.786 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 474.1055ms
+2026-08-11 11:48:46.792 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:48:46.806 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:46.819 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:46.831 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:48:46.854 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:46.862 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.877 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 140.9629ms
+2026-08-11 11:48:46.886 +05:30 [INF] GET /api/compounds responded 200 in 839ms
+2026-08-11 11:48:46.895 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:48:46.899 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:48:46.913 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:46.931 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 930.7551ms
+2026-08-11 11:48:46.952 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:48:47.273 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:48:47.326 +05:30 [INF] GET /api/categories responded 200 in 717ms
+2026-08-11 11:48:47.433 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:48:47.436 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:47.460 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 898.2105ms
+2026-08-11 11:48:47.506 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:48:47.516 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 245.1161ms
+2026-08-11 11:48:47.557 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 134.9967ms
+2026-08-11 11:48:47.563 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:48:47.568 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:48:47.570 +05:30 [INF] GET /api/targets responded 200 in 763ms
+2026-08-11 11:48:47.576 +05:30 [INF] GET /api/compounds responded 200 in 721ms
+2026-08-11 11:48:47.592 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 885.0169ms
+2026-08-11 11:48:47.602 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 810.0902ms
+2026-08-11 11:48:51.966 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:48:52.031 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:52.047 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 16ms
+2026-08-11 11:48:52.063 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 97.177ms
+2026-08-11 11:48:52.111 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 17
+2026-08-11 11:48:52.142 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:52.148 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:48:52.175 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:48:52.242 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-11 11:48:52.303 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 122.6113ms
+2026-08-11 11:48:52.313 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:48:52.325 +05:30 [INF] POST /api/query/ask responded 400 in 182ms
+2026-08-11 11:48:52.343 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 400 null application/problem+json; charset=utf-8 231.9765ms
+2026-08-11 11:48:58.209 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:48:58.245 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:58.255 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 9ms
+2026-08-11 11:48:58.265 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 56.204ms
+2026-08-11 11:48:58.293 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 17
+2026-08-11 11:48:58.312 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:48:58.316 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:48:58.326 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:48:58.343 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-11 11:48:58.350 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 14.8574ms
+2026-08-11 11:48:58.361 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:48:58.367 +05:30 [INF] POST /api/query/ask responded 400 in 54ms
+2026-08-11 11:48:58.380 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 400 null application/problem+json; charset=utf-8 87.3599ms
+2026-08-11 11:49:00.466 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 17
+2026-08-11 11:49:00.494 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:00.498 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:49:00.513 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:49:00.543 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-11 11:49:00.549 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 18.0579ms
+2026-08-11 11:49:00.569 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:49:00.593 +05:30 [INF] POST /api/query/ask responded 400 in 98ms
+2026-08-11 11:49:00.612 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 400 null application/problem+json; charset=utf-8 147.5213ms
+2026-08-11 11:49:04.030 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:49:04.031 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:49:04.091 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.109 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.112 +05:30 [INF] OPTIONS /api/documents responded 204 in 21ms
+2026-08-11 11:49:04.128 +05:30 [INF] OPTIONS /api/documents responded 204 in 19ms
+2026-08-11 11:49:04.182 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 152.0357ms
+2026-08-11 11:49:04.233 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 202.3866ms
+2026-08-11 11:49:04.475 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:49:04.525 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.532 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:04.558 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:49:04.612 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:49:04.666 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:04.683 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 116.0785ms
+2026-08-11 11:49:04.687 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:49:04.696 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:04.710 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.714 +05:30 [INF] GET /api/documents responded 200 in 188ms
+2026-08-11 11:49:04.730 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:04.736 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 260.795ms
+2026-08-11 11:49:04.741 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:49:04.782 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:49:04.805 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:04.832 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 55.3768ms
+2026-08-11 11:49:04.909 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:04.919 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:04.922 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:49:04.923 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:49:04.926 +05:30 [INF] GET /api/documents responded 200 in 216ms
+2026-08-11 11:49:04.935 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.965 +05:30 [INF] OPTIONS /api/compounds responded 204 in 30ms
+2026-08-11 11:49:04.950 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.962 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 275.53ms
+2026-08-11 11:49:04.945 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:04.978 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 59.0678ms
+2026-08-11 11:49:04.982 +05:30 [INF] OPTIONS /api/categories responded 204 in 31ms
+2026-08-11 11:49:05.007 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:05.009 +05:30 [INF] OPTIONS /api/targets responded 204 in 63ms
+2026-08-11 11:49:05.027 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:49:05.041 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 117.7471ms
+2026-08-11 11:49:05.053 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.066 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 145.3796ms
+2026-08-11 11:49:05.081 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.101 +05:30 [INF] OPTIONS /api/compounds responded 204 in 47ms
+2026-08-11 11:49:05.107 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:49:05.124 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:05.128 +05:30 [INF] OPTIONS /api/targets responded 204 in 46ms
+2026-08-11 11:49:05.140 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 132.5168ms
+2026-08-11 11:49:05.151 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.165 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.175 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 147.1341ms
+2026-08-11 11:49:05.203 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:49:05.210 +05:30 [INF] OPTIONS /api/categories responded 204 in 59ms
+2026-08-11 11:49:05.219 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:05.236 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:49:05.261 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.275 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 168.002ms
+2026-08-11 11:49:05.280 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:49:05.303 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.316 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:05.417 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:05.429 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:49:05.433 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:05.442 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:49:05.458 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:49:05.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:05.482 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:49:05.492 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:05.499 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 87.7486ms
+2026-08-11 11:49:05.501 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:05.515 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:05.524 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 72.6628ms
+2026-08-11 11:49:05.529 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:05.546 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:05.552 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 71.8564ms
+2026-08-11 11:49:05.560 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:05.565 +05:30 [INF] GET /api/compounds responded 200 in 400ms
+2026-08-11 11:49:05.569 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:05.581 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:05.586 +05:30 [INF] GET /api/categories responded 200 in 324ms
+2026-08-11 11:49:05.600 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 475.4642ms
+2026-08-11 11:49:05.608 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:49:05.628 +05:30 [INF] GET /api/targets responded 200 in 325ms
+2026-08-11 11:49:05.644 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 440.9619ms
+2026-08-11 11:49:05.665 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:49:05.676 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:05.684 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 448.0056ms
+2026-08-11 11:49:05.748 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:49:06.012 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:06.078 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:06.199 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:06.202 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:06.208 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 535.231ms
+2026-08-11 11:49:06.225 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:06.216 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:06.216 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:49:06.245 +05:30 [INF] GET /api/compounds responded 200 in 699ms
+2026-08-11 11:49:06.250 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:49:06.262 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:49:06.270 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 768.1755ms
+2026-08-11 11:49:06.283 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:49:06.293 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:06.323 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:06.326 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 68.6304ms
+2026-08-11 11:49:06.351 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 69.9233ms
+2026-08-11 11:49:06.372 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:06.382 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:06.390 +05:30 [INF] GET /api/targets responded 200 in 378ms
+2026-08-11 11:49:06.406 +05:30 [INF] GET /api/categories responded 200 in 207ms
+2026-08-11 11:49:06.429 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 764.3605ms
+2026-08-11 11:49:06.448 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 699.9913ms
+2026-08-11 11:49:15.746 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:49:15.764 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:15.768 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 3ms
+2026-08-11 11:49:15.782 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 36.393ms
+2026-08-11 11:49:15.808 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 27
+2026-08-11 11:49:15.830 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:15.837 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:49:15.844 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:49:15.924 +05:30 [WRN] No embedding API key configured; using local hash-based fallback embedding.
+2026-08-11 11:49:16.010 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ChunkIndex", "d"."ChunkText", "d"."DocumentId", "d"."EmbeddingVector", "d0"."Id", "d0"."ContentType", "d0"."FileName", "d0"."FilePath", "d0"."RelatedCompoundId", "d0"."Title", "d0"."UploadedAt", "d0"."UploadedById"
+FROM "DocumentChunks" AS "d"
+INNER JOIN "Documents" AS "d0" ON "d"."DocumentId" = "d0"."Id"
+2026-08-11 11:49:16.103 +05:30 [WRN] No chat API key configured; returning an extractive fallback summary.
+2026-08-11 11:49:16.637 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 598), @p1='?' (DbType = DateTime), @p2='?' (Size = 12), @p3='?' (Size = 1), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "QueryHistories" ("AnswerText", "CreatedAt", "QuestionText", "SourceChunkIds", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-08-11 11:49:16.714 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.QueryResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:49:16.739 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 882.5268ms
+2026-08-11 11:49:16.751 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:49:16.766 +05:30 [INF] POST /api/query/ask responded 200 in 936ms
+2026-08-11 11:49:16.811 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 1003.6237ms
+2026-08-11 11:49:30.890 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:49:30.890 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:49:30.927 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:30.996 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:30.998 +05:30 [INF] OPTIONS /api/documents responded 204 in 70ms
+2026-08-11 11:49:31.011 +05:30 [INF] OPTIONS /api/documents responded 204 in 15ms
+2026-08-11 11:49:31.024 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 133.8438ms
+2026-08-11 11:49:31.031 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 140.7151ms
+2026-08-11 11:49:31.048 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:49:31.081 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:31.086 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:31.093 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:49:31.115 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:49:31.140 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:31.149 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 41.3874ms
+2026-08-11 11:49:31.154 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:49:31.179 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:31.217 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:31.226 +05:30 [INF] GET /api/documents responded 200 in 144ms
+2026-08-11 11:49:31.230 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:31.249 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 201.3329ms
+2026-08-11 11:49:31.257 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:49:31.345 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:49:31.373 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:31.392 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 50.6694ms
+2026-08-11 11:49:31.399 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:31.410 +05:30 [INF] GET /api/documents responded 200 in 192ms
+2026-08-11 11:49:31.416 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 264.2675ms
+2026-08-11 11:49:32.315 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:32.315 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:49:32.317 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:49:32.318 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:49:32.318 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:32.345 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.360 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.365 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.379 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.392 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.394 +05:30 [INF] OPTIONS /api/compounds responded 204 in 49ms
+2026-08-11 11:49:32.397 +05:30 [INF] OPTIONS /api/targets responded 204 in 36ms
+2026-08-11 11:49:32.398 +05:30 [INF] OPTIONS /api/categories responded 204 in 33ms
+2026-08-11 11:49:32.406 +05:30 [INF] OPTIONS /api/targets responded 204 in 27ms
+2026-08-11 11:49:32.412 +05:30 [INF] OPTIONS /api/compounds responded 204 in 20ms
+2026-08-11 11:49:32.429 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 114.1286ms
+2026-08-11 11:49:32.445 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 130.5192ms
+2026-08-11 11:49:32.452 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 135.5602ms
+2026-08-11 11:49:32.465 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 146.8389ms
+2026-08-11 11:49:32.479 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 161.0319ms
+2026-08-11 11:49:32.528 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:49:32.556 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:32.578 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:49:32.599 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:49:32.623 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.640 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.648 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.662 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:32.667 +05:30 [INF] OPTIONS /api/categories responded 204 in 43ms
+2026-08-11 11:49:32.677 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:32.680 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:32.683 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:32.709 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 181.1721ms
+2026-08-11 11:49:32.725 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:49:32.754 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:49:32.799 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:49:33.095 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:33.095 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:49:33.168 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:49:33.185 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:33.199 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:33.215 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:33.232 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 155.1848ms
+2026-08-11 11:49:33.238 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:33.240 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 154.5052ms
+2026-08-11 11:49:33.246 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 94.2754ms
+2026-08-11 11:49:33.254 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:33.276 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:33.283 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:33.291 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:33.297 +05:30 [INF] GET /api/compounds responded 200 in 656ms
+2026-08-11 11:49:33.302 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:33.311 +05:30 [INF] GET /api/categories responded 200 in 662ms
+2026-08-11 11:49:33.314 +05:30 [INF] GET /api/targets responded 200 in 652ms
+2026-08-11 11:49:33.324 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 768.3994ms
+2026-08-11 11:49:33.329 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:49:33.337 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 758.852ms
+2026-08-11 11:49:33.344 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 745.2369ms
+2026-08-11 11:49:33.376 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:33.387 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:49:33.394 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:49:33.416 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:33.459 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:33.472 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:33.478 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 104.6089ms
+2026-08-11 11:49:33.486 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:33.492 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:33.498 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:33.506 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:49:33.511 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:49:33.515 +05:30 [INF] GET /api/compounds responded 200 in 238ms
+2026-08-11 11:49:33.532 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:49:33.554 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:49:33.564 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 326.4595ms
+2026-08-11 11:49:33.583 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:33.644 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:33.654 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:33.663 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:33.671 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 143.645ms
+2026-08-11 11:49:33.682 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 131.7072ms
+2026-08-11 11:49:33.724 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:33.755 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:33.761 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:33.767 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:33.771 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 48ms
+2026-08-11 11:49:33.808 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 153.9493ms
+2026-08-11 11:49:33.785 +05:30 [INF] GET /api/categories responded 200 in 325ms
+2026-08-11 11:49:33.797 +05:30 [INF] GET /api/targets responded 200 in 324ms
+2026-08-11 11:49:33.778 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 22ms
+2026-08-11 11:49:33.898 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 511.3368ms
+2026-08-11 11:49:33.905 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 511.0484ms
+2026-08-11 11:49:33.911 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 247.3878ms
+2026-08-11 11:49:33.913 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:34.017 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:34.041 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:34.062 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:49:34.092 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:49:34.111 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:49:34.131 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:49:34.145 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:49:34.164 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:34.183 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:49:34.201 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 110.6254ms
+2026-08-11 11:49:34.206 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:34.217 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:34.233 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:34.239 +05:30 [INF] GET /api/dashboard/stats responded 200 in 222ms
+2026-08-11 11:49:34.243 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:34.255 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 341.688ms
+2026-08-11 11:49:34.263 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:49:34.294 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:49:34.308 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:49:34.321 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:49:34.334 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:49:34.348 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:34.366 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:49:34.381 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 88.4345ms
+2026-08-11 11:49:34.396 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:34.410 +05:30 [INF] GET /api/dashboard/stats responded 200 in 177ms
+2026-08-11 11:49:34.428 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 221.4647ms
+2026-08-11 11:49:37.399 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:37.399 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:49:37.400 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:49:37.409 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:37.415 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:37.432 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:37.442 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:37.443 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.446 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.450 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:49:37.458 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:49:37.463 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:49:37.482 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:49:37.492 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:49:37.495 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:37.499 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:37.512 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:37.529 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:37.533 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 52.3091ms
+2026-08-11 11:49:37.540 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:49:37.543 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 52.9936ms
+2026-08-11 11:49:37.548 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:49:37.549 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 76.0737ms
+2026-08-11 11:49:37.555 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:49:37.556 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.567 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:37.577 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.592 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:37.598 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:37.611 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:37.616 +05:30 [INF] GET /api/targets responded 200 in 201ms
+2026-08-11 11:49:37.623 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.627 +05:30 [INF] GET /api/categories responded 200 in 195ms
+2026-08-11 11:49:37.631 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.638 +05:30 [INF] GET /api/compounds responded 200 in 228ms
+2026-08-11 11:49:37.641 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:37.649 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 249.527ms
+2026-08-11 11:49:37.658 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:49:37.666 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 266.3314ms
+2026-08-11 11:49:37.674 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:49:37.683 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 283.4591ms
+2026-08-11 11:49:37.692 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:49:37.747 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:49:37.776 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:49:37.809 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:37.815 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:37.823 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:37.839 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:37.846 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 102.1708ms
+2026-08-11 11:49:37.854 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 80.1678ms
+2026-08-11 11:49:37.879 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.874 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:37.860 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 56.3304ms
+2026-08-11 11:49:37.888 +05:30 [INF] GET /api/categories responded 200 in 295ms
+2026-08-11 11:49:37.892 +05:30 [INF] GET /api/targets responded 200 in 324ms
+2026-08-11 11:49:37.898 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:49:37.911 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 362.3997ms
+2026-08-11 11:49:37.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 382.5697ms
+2026-08-11 11:49:37.927 +05:30 [INF] GET /api/compounds responded 200 in 315ms
+2026-08-11 11:49:37.983 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 428.127ms
+2026-08-11 11:49:39.558 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:49:39.560 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:49:39.603 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:39.613 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:39.623 +05:30 [INF] OPTIONS /api/documents responded 204 in 20ms
+2026-08-11 11:49:39.627 +05:30 [INF] OPTIONS /api/documents responded 204 in 13ms
+2026-08-11 11:49:39.640 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 81.779ms
+2026-08-11 11:49:39.647 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 86.3546ms
+2026-08-11 11:49:39.666 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:49:39.987 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:39.997 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:40.081 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:49:40.111 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:49:40.141 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:40.161 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 60.0663ms
+2026-08-11 11:49:40.164 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:49:40.182 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:40.198 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:40.207 +05:30 [INF] GET /api/documents responded 200 in 222ms
+2026-08-11 11:49:40.213 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:40.224 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 558.3144ms
+2026-08-11 11:49:40.229 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:49:40.252 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:49:40.265 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:49:40.275 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 24.6661ms
+2026-08-11 11:49:40.283 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:49:40.289 +05:30 [INF] GET /api/documents responded 200 in 90ms
+2026-08-11 11:49:40.299 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 135.3246ms
+2026-08-11 11:49:54.094 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:54.096 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:54.108 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:54.159 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:54.173 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 64ms
+2026-08-11 11:49:54.178 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 18ms
+2026-08-11 11:49:54.195 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 100.7835ms
+2026-08-11 11:49:54.206 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 109.8161ms
+2026-08-11 11:49:54.222 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:54.257 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:54.266 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:54.274 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:49:54.286 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:49:54.305 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:49:54.317 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:49:54.332 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:49:54.362 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:54.392 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:49:54.412 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 129.1921ms
+2026-08-11 11:49:54.416 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:49:54.433 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:54.468 +05:30 [INF] GET /api/dashboard/stats responded 200 in 210ms
+2026-08-11 11:49:54.461 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:49:54.491 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 269.6753ms
+2026-08-11 11:49:54.496 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:54.535 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:49:54.553 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:49:54.568 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:49:54.591 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:49:54.606 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:49:54.618 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:49:54.633 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:49:54.642 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 93.0698ms
+2026-08-11 11:49:54.651 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:49:54.657 +05:30 [INF] GET /api/dashboard/stats responded 200 in 196ms
+2026-08-11 11:49:54.668 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 251.9995ms
+2026-08-11 11:50:00.214 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - null null
+2026-08-11 11:50:00.214 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - null null
+2026-08-11 11:50:00.309 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:50:00.328 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:50:00.330 +05:30 [INF] OPTIONS /api/query/history responded 204 in 21ms
+2026-08-11 11:50:00.338 +05:30 [INF] OPTIONS /api/query/history responded 204 in 9ms
+2026-08-11 11:50:00.348 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - 204 null null 134.6283ms
+2026-08-11 11:50:00.366 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - 204 null null 151.5807ms
+2026-08-11 11:50:00.538 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/query/history - null null
+2026-08-11 11:50:00.638 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:50:00.647 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:50:00.664 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetHistory() on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:50:00.707 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "q"."Id", "q"."QuestionText", "q"."AnswerText", "q"."SourceChunkIds", "q"."CreatedAt"
+FROM "QueryHistories" AS "q"
+WHERE "q"."UserId" = @userId
+ORDER BY "q"."CreatedAt" DESC
+2026-08-11 11:50:00.732 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:50:00.755 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI) in 80.972ms
+2026-08-11 11:50:00.760 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/query/history - null null
+2026-08-11 11:50:00.766 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:50:00.780 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:50:00.788 +05:30 [INF] GET /api/query/history responded 200 in 149ms
+2026-08-11 11:50:00.793 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:50:00.806 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/query/history - 200 null application/json; charset=utf-8 268.3636ms
+2026-08-11 11:50:00.811 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetHistory() on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:50:00.832 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "q"."Id", "q"."QuestionText", "q"."AnswerText", "q"."SourceChunkIds", "q"."CreatedAt"
+FROM "QueryHistories" AS "q"
+WHERE "q"."UserId" = @userId
+ORDER BY "q"."CreatedAt" DESC
+2026-08-11 11:50:00.840 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:50:00.844 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI) in 12.9258ms
+2026-08-11 11:50:00.848 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:50:00.853 +05:30 [INF] GET /api/query/history responded 200 in 73ms
+2026-08-11 11:50:00.857 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/query/history - 200 null application/json; charset=utf-8 96.7996ms
+2026-08-11 11:52:52.882 +05:30 [INF] User profile is available. Using 'C:\Users\Sarang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-11 11:53:03.574 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-11 11:53:04.826 +05:30 [INF] Executed DbCommand (248ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2026-08-11 11:53:06.658 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2026-08-11 06:23:06.6211864+00:00');
+SELECT changes();
+2026-08-11 11:53:10.844 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2026-08-11 11:53:11.999 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2026-08-11 11:53:12.875 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-08-11 11:53:13.493 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-11 11:53:13.728 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2026-08-11 11:53:18.346 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@normalizedName='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:53:19.471 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:53:19.875 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:53:23.721 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 28)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @normalizedEmail
+LIMIT 2
+2026-08-11 11:53:25.595 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c")
+2026-08-11 11:53:27.820 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-11 11:53:27.917 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-11 11:53:27.969 +05:30 [INF] Hosting environment: Development
+2026-08-11 11:53:28.420 +05:30 [INF] Content root path: C:\Users\Sarang\Desktop\FrontEnd\Research-Knowledge-Platform\CompoundResearchAPI
+2026-08-11 11:53:34.751 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - null null
+2026-08-11 11:53:34.724 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - null null
+2026-08-11 11:53:36.427 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:53:36.427 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:53:36.543 +05:30 [INF] OPTIONS /api/query/history responded 204 in 116ms
+2026-08-11 11:53:36.560 +05:30 [INF] OPTIONS /api/query/history responded 204 in 158ms
+2026-08-11 11:53:36.780 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - 204 null null 2068.1299ms
+2026-08-11 11:53:36.799 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - 204 null null 2087.3739ms
+2026-08-11 11:53:37.500 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/query/history - null null
+2026-08-11 11:53:38.525 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:53:39.696 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:53:40.091 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetHistory() on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:53:40.843 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "q"."Id", "q"."QuestionText", "q"."AnswerText", "q"."SourceChunkIds", "q"."CreatedAt"
+FROM "QueryHistories" AS "q"
+WHERE "q"."UserId" = @userId
+ORDER BY "q"."CreatedAt" DESC
+2026-08-11 11:53:41.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:53:41.818 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/query/history - null null
+2026-08-11 11:53:41.829 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI) in 1273.4211ms
+2026-08-11 11:53:41.925 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:53:42.030 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:53:42.149 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:53:42.172 +05:30 [INF] GET /api/query/history responded 200 in 3652ms
+2026-08-11 11:53:42.217 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetHistory() on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:53:42.352 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/query/history - 200 null application/json; charset=utf-8 4851.3813ms
+2026-08-11 11:53:42.863 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "q"."Id", "q"."QuestionText", "q"."AnswerText", "q"."SourceChunkIds", "q"."CreatedAt"
+FROM "QueryHistories" AS "q"
+WHERE "q"."UserId" = @userId
+ORDER BY "q"."CreatedAt" DESC
+2026-08-11 11:53:43.252 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:53:43.561 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI) in 1164.0256ms
+2026-08-11 11:53:43.814 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:53:43.977 +05:30 [INF] GET /api/query/history responded 200 in 2059ms
+2026-08-11 11:53:44.375 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/query/history - 200 null application/json; charset=utf-8 2556.6124ms
+2026-08-11 11:53:50.748 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:53:51.283 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:53:51.446 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 163ms
+2026-08-11 11:53:51.732 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 983.8387ms
+2026-08-11 11:53:52.384 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 52
+2026-08-11 11:53:53.052 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:53:53.232 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:53:53.481 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:53:53.959 +05:30 [WRN] No embedding API key configured; using local hash-based fallback embedding.
+2026-08-11 11:53:54.412 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ChunkIndex", "d"."ChunkText", "d"."DocumentId", "d"."EmbeddingVector", "d0"."Id", "d0"."ContentType", "d0"."FileName", "d0"."FilePath", "d0"."RelatedCompoundId", "d0"."Title", "d0"."UploadedAt", "d0"."UploadedById"
+FROM "DocumentChunks" AS "d"
+INNER JOIN "Documents" AS "d0" ON "d"."DocumentId" = "d0"."Id"
+2026-08-11 11:53:55.021 +05:30 [WRN] No chat API key configured; returning an extractive fallback summary.
+2026-08-11 11:53:55.928 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 598), @p1='?' (DbType = DateTime), @p2='?' (Size = 37), @p3='?' (Size = 1), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "QueryHistories" ("AnswerText", "CreatedAt", "QuestionText", "SourceChunkIds", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-08-11 11:53:56.108 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.QueryResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:53:56.157 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 2413.5543ms
+2026-08-11 11:53:56.223 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:53:56.299 +05:30 [INF] POST /api/query/ask responded 200 in 3247ms
+2026-08-11 11:53:56.438 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 4054.1283ms
+2026-08-11 11:54:03.040 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:54:03.206 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:54:03.228 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 22ms
+2026-08-11 11:54:03.334 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 293.9718ms
+2026-08-11 11:54:03.457 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 17
+2026-08-11 11:54:03.545 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:54:03.560 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:54:03.632 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:54:03.844 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-11 11:54:03.912 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 118.5947ms
+2026-08-11 11:54:03.916 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:54:03.927 +05:30 [INF] POST /api/query/ask responded 400 in 381ms
+2026-08-11 11:54:03.934 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 400 null application/problem+json; charset=utf-8 476.719ms
+2026-08-11 11:55:29.596 +05:30 [INF] Application is shutting down...
+2026-08-11 11:57:47.509 +05:30 [INF] User profile is available. Using 'C:\Users\Sarang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-11 11:57:48.745 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-11 11:57:48.804 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2026-08-11 11:57:48.844 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2026-08-11 06:27:48.8194662+00:00');
+SELECT changes();
+2026-08-11 11:57:48.963 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2026-08-11 11:57:48.982 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2026-08-11 11:57:48.996 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2026-08-11 11:57:49.048 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-11 11:57:49.058 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2026-08-11 11:57:49.735 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedName='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:57:49.890 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:57:50.334 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @normalizedName
+LIMIT 1
+2026-08-11 11:57:50.795 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 28)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @normalizedEmail
+LIMIT 2
+2026-08-11 11:57:51.161 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c")
+2026-08-11 11:57:51.671 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-11 11:57:52.616 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-11 11:57:53.083 +05:30 [INF] Hosting environment: Development
+2026-08-11 11:57:53.534 +05:30 [INF] Content root path: C:\Users\Sarang\Desktop\FrontEnd\Research-Knowledge-Platform\CompoundResearchAPI
+2026-08-11 11:58:00.383 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:58:00.552 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:00.569 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 17ms
+2026-08-11 11:58:00.633 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 252.8831ms
+2026-08-11 11:58:01.026 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 17
+2026-08-11 11:58:01.059 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:01.395 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:01.483 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:01.651 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-11 11:58:01.723 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 179.7389ms
+2026-08-11 11:58:01.729 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:01.769 +05:30 [INF] POST /api/query/ask responded 400 in 711ms
+2026-08-11 11:58:01.786 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 400 null application/problem+json; charset=utf-8 762.3531ms
+2026-08-11 11:58:11.652 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:58:11.914 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:11.961 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 47ms
+2026-08-11 11:58:11.978 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 325.803ms
+2026-08-11 11:58:12.012 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 41
+2026-08-11 11:58:12.086 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:12.114 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:12.130 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:12.162 +05:30 [WRN] No embedding API key configured; using local hash-based fallback embedding.
+2026-08-11 11:58:12.436 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ChunkIndex", "d"."ChunkText", "d"."DocumentId", "d"."EmbeddingVector", "d0"."Id", "d0"."ContentType", "d0"."FileName", "d0"."FilePath", "d0"."RelatedCompoundId", "d0"."Title", "d0"."UploadedAt", "d0"."UploadedById"
+FROM "DocumentChunks" AS "d"
+INNER JOIN "Documents" AS "d0" ON "d"."DocumentId" = "d0"."Id"
+2026-08-11 11:58:12.719 +05:30 [WRN] No chat API key configured; returning an extractive fallback summary.
+2026-08-11 11:58:13.097 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 598), @p1='?' (DbType = DateTime), @p2='?' (Size = 26), @p3='?' (Size = 1), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "QueryHistories" ("AnswerText", "CreatedAt", "QuestionText", "SourceChunkIds", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-08-11 11:58:13.199 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.QueryResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:58:13.240 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 1099.4398ms
+2026-08-11 11:58:13.250 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:13.259 +05:30 [INF] POST /api/query/ask responded 200 in 1173ms
+2026-08-11 11:58:13.294 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 1281.5705ms
+2026-08-11 11:58:39.432 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:58:39.484 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:39.528 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 43ms
+2026-08-11 11:58:39.543 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 110.8045ms
+2026-08-11 11:58:39.575 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 41
+2026-08-11 11:58:39.601 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:39.641 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:39.648 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:39.680 +05:30 [WRN] No embedding API key configured; using local hash-based fallback embedding.
+2026-08-11 11:58:39.951 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ChunkIndex", "d"."ChunkText", "d"."DocumentId", "d"."EmbeddingVector", "d0"."Id", "d0"."ContentType", "d0"."FileName", "d0"."FilePath", "d0"."RelatedCompoundId", "d0"."Title", "d0"."UploadedAt", "d0"."UploadedById"
+FROM "DocumentChunks" AS "d"
+INNER JOIN "Documents" AS "d0" ON "d"."DocumentId" = "d0"."Id"
+2026-08-11 11:58:39.968 +05:30 [WRN] No chat API key configured; returning an extractive fallback summary.
+2026-08-11 11:58:39.994 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 598), @p1='?' (DbType = DateTime), @p2='?' (Size = 26), @p3='?' (Size = 1), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "QueryHistories" ("AnswerText", "CreatedAt", "QuestionText", "SourceChunkIds", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-08-11 11:58:40.047 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.QueryResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:58:40.062 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 396.148ms
+2026-08-11 11:58:40.073 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:40.088 +05:30 [INF] POST /api/query/ask responded 200 in 486ms
+2026-08-11 11:58:40.100 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 524.6272ms
+2026-08-11 11:58:42.273 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 41
+2026-08-11 11:58:42.311 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:42.317 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:42.344 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:42.392 +05:30 [WRN] No embedding API key configured; using local hash-based fallback embedding.
+2026-08-11 11:58:42.411 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ChunkIndex", "d"."ChunkText", "d"."DocumentId", "d"."EmbeddingVector", "d0"."Id", "d0"."ContentType", "d0"."FileName", "d0"."FilePath", "d0"."RelatedCompoundId", "d0"."Title", "d0"."UploadedAt", "d0"."UploadedById"
+FROM "DocumentChunks" AS "d"
+INNER JOIN "Documents" AS "d0" ON "d"."DocumentId" = "d0"."Id"
+2026-08-11 11:58:42.443 +05:30 [WRN] No chat API key configured; returning an extractive fallback summary.
+2026-08-11 11:58:42.479 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 598), @p1='?' (DbType = DateTime), @p2='?' (Size = 26), @p3='?' (Size = 1), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "QueryHistories" ("AnswerText", "CreatedAt", "QuestionText", "SourceChunkIds", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-08-11 11:58:42.513 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.QueryResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:58:42.538 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 147.4102ms
+2026-08-11 11:58:42.559 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:42.578 +05:30 [INF] POST /api/query/ask responded 200 in 267ms
+2026-08-11 11:58:42.625 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 352.7382ms
+2026-08-11 11:58:44.657 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:58:44.783 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:44.793 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 10ms
+2026-08-11 11:58:44.814 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 156.3035ms
+2026-08-11 11:58:44.832 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 17
+2026-08-11 11:58:44.858 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:44.864 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:44.878 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:44.898 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-11 11:58:44.912 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 15.2363ms
+2026-08-11 11:58:44.932 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:44.943 +05:30 [INF] POST /api/query/ask responded 400 in 85ms
+2026-08-11 11:58:44.959 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 400 null application/problem+json; charset=utf-8 126.7251ms
+2026-08-11 11:58:53.062 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - null null
+2026-08-11 11:58:53.095 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:53.113 +05:30 [INF] OPTIONS /api/query/ask responded 204 in 18ms
+2026-08-11 11:58:53.132 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/ask - 204 null null 69.7278ms
+2026-08-11 11:58:53.167 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/query/ask - application/json 29
+2026-08-11 11:58:53.194 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:53.199 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:53.211 +05:30 [INF] Route matched with {action = "Ask", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Models.DTOs.QueryResponseDto]]] Ask(CompoundResearchAPI.Models.DTOs.QueryRequestDto) on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:53.230 +05:30 [WRN] No embedding API key configured; using local hash-based fallback embedding.
+2026-08-11 11:58:53.244 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ChunkIndex", "d"."ChunkText", "d"."DocumentId", "d"."EmbeddingVector", "d0"."Id", "d0"."ContentType", "d0"."FileName", "d0"."FilePath", "d0"."RelatedCompoundId", "d0"."Title", "d0"."UploadedAt", "d0"."UploadedById"
+FROM "DocumentChunks" AS "d"
+INNER JOIN "Documents" AS "d0" ON "d"."DocumentId" = "d0"."Id"
+2026-08-11 11:58:53.261 +05:30 [WRN] No chat API key configured; returning an extractive fallback summary.
+2026-08-11 11:58:53.274 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 598), @p1='?' (DbType = DateTime), @p2='?' (Size = 14), @p3='?' (Size = 1), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "QueryHistories" ("AnswerText", "CreatedAt", "QuestionText", "SourceChunkIds", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2026-08-11 11:58:53.340 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Models.DTOs.QueryResponseDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:58:53.346 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI) in 118.1401ms
+2026-08-11 11:58:53.366 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.Ask (CompoundResearchAPI)'
+2026-08-11 11:58:53.377 +05:30 [INF] POST /api/query/ask responded 200 in 182ms
+2026-08-11 11:58:53.396 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/query/ask - 200 null application/json; charset=utf-8 228.9ms
+2026-08-11 11:58:58.011 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - null null
+2026-08-11 11:58:58.015 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - null null
+2026-08-11 11:58:58.050 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:58.069 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:58.079 +05:30 [INF] OPTIONS /api/query/history responded 204 in 29ms
+2026-08-11 11:58:58.084 +05:30 [INF] OPTIONS /api/query/history responded 204 in 15ms
+2026-08-11 11:58:58.100 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - 204 null null 89.5767ms
+2026-08-11 11:58:58.125 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/query/history - 204 null null 110.0067ms
+2026-08-11 11:58:58.148 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/query/history - null null
+2026-08-11 11:58:58.195 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:58.207 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:58:58.270 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetHistory() on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:58.389 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "q"."Id", "q"."QuestionText", "q"."AnswerText", "q"."SourceChunkIds", "q"."CreatedAt"
+FROM "QueryHistories" AS "q"
+WHERE "q"."UserId" = @userId
+ORDER BY "q"."CreatedAt" DESC
+2026-08-11 11:58:58.416 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:58:58.477 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI) in 160.3437ms
+2026-08-11 11:58:58.483 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:58:58.488 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/query/history - null null
+2026-08-11 11:58:58.494 +05:30 [INF] GET /api/query/history responded 200 in 299ms
+2026-08-11 11:58:58.504 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:58:58.516 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/query/history - 200 null application/json; charset=utf-8 368.1137ms
+2026-08-11 11:58:58.525 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:58:58.655 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Query"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[System.Object]]]] GetHistory() on controller CompoundResearchAPI.Controllers.QueryController (CompoundResearchAPI).
+2026-08-11 11:58:58.697 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "q"."Id", "q"."QuestionText", "q"."AnswerText", "q"."SourceChunkIds", "q"."CreatedAt"
+FROM "QueryHistories" AS "q"
+WHERE "q"."UserId" = @userId
+ORDER BY "q"."CreatedAt" DESC
+2026-08-11 11:58:58.717 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:58:58.729 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI) in 44.1953ms
+2026-08-11 11:58:58.743 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.QueryController.GetHistory (CompoundResearchAPI)'
+2026-08-11 11:58:58.748 +05:30 [INF] GET /api/query/history responded 200 in 244ms
+2026-08-11 11:58:58.762 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/query/history - 200 null application/json; charset=utf-8 274.3885ms
+2026-08-11 11:59:02.403 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:59:02.405 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/documents - null null
+2026-08-11 11:59:02.417 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:02.465 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:02.477 +05:30 [INF] OPTIONS /api/documents responded 204 in 60ms
+2026-08-11 11:59:02.481 +05:30 [INF] OPTIONS /api/documents responded 204 in 16ms
+2026-08-11 11:59:02.522 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 118.4168ms
+2026-08-11 11:59:02.538 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/documents - 204 null null 133.0119ms
+2026-08-11 11:59:02.631 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:59:02.684 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:02.699 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:02.742 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:59:02.874 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:59:03.061 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:03.093 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 335.3248ms
+2026-08-11 11:59:03.109 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/documents - null null
+2026-08-11 11:59:03.126 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:03.156 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:03.162 +05:30 [INF] GET /api/documents responded 200 in 477ms
+2026-08-11 11:59:03.168 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:03.192 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 561.0548ms
+2026-08-11 11:59:03.198 +05:30 [INF] Route matched with {action = "GetAll", controller = "Documents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.DocumentDto]]]] GetAll() on controller CompoundResearchAPI.Controllers.DocumentsController (CompoundResearchAPI).
+2026-08-11 11:59:03.242 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."ContentType", "d"."FileName", "d"."FilePath", "d"."RelatedCompoundId", "d"."Title", "d"."UploadedAt", "d"."UploadedById", "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Documents" AS "d"
+LEFT JOIN "Compounds" AS "c" ON "d"."RelatedCompoundId" = "c"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "d"."UploadedById" = "a"."Id"
+ORDER BY "d"."UploadedAt" DESC
+2026-08-11 11:59:03.259 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.DocumentDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:03.271 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI) in 39.2022ms
+2026-08-11 11:59:03.286 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DocumentsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:03.291 +05:30 [INF] GET /api/documents responded 200 in 134ms
+2026-08-11 11:59:03.308 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/documents - 200 null application/json; charset=utf-8 198.9114ms
+2026-08-11 11:59:06.899 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:59:06.899 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:59:06.901 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:59:06.907 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - null null
+2026-08-11 11:59:06.907 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/targets - null null
+2026-08-11 11:59:06.993 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.061 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.076 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.090 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.111 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.130 +05:30 [INF] OPTIONS /api/compounds responded 204 in 136ms
+2026-08-11 11:59:07.138 +05:30 [INF] OPTIONS /api/targets responded 204 in 76ms
+2026-08-11 11:59:07.149 +05:30 [INF] OPTIONS /api/categories responded 204 in 72ms
+2026-08-11 11:59:07.165 +05:30 [INF] OPTIONS /api/compounds responded 204 in 75ms
+2026-08-11 11:59:07.176 +05:30 [INF] OPTIONS /api/targets responded 204 in 64ms
+2026-08-11 11:59:07.191 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 292.2292ms
+2026-08-11 11:59:07.200 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 300.7686ms
+2026-08-11 11:59:07.228 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 326.3802ms
+2026-08-11 11:59:07.246 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/compounds - 204 null null 338.9142ms
+2026-08-11 11:59:07.298 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/targets - 204 null null 390.3309ms
+2026-08-11 11:59:07.360 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/categories - null null
+2026-08-11 11:59:07.410 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:59:07.429 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:59:07.482 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:59:07.585 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.609 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.623 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.644 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:07.646 +05:30 [INF] OPTIONS /api/categories responded 204 in 60ms
+2026-08-11 11:59:07.653 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:07.660 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:07.669 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:59:07.676 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/categories - 204 null null 316.7301ms
+2026-08-11 11:59:07.798 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:59:07.831 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:59:07.855 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:59:07.939 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:59:07.969 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:59:08.110 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:08.147 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:08.313 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 436.2883ms
+2026-08-11 11:59:08.314 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 414.3342ms
+2026-08-11 11:59:08.323 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-08-11 11:59:08.333 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:08.380 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:08.396 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:08.408 +05:30 [INF] GET /api/categories responded 200 in 799ms
+2026-08-11 11:59:08.414 +05:30 [INF] GET /api/targets responded 200 in 791ms
+2026-08-11 11:59:08.422 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:08.444 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:59:08.447 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 1036.7494ms
+2026-08-11 11:59:08.456 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 1027.4955ms
+2026-08-11 11:59:08.462 +05:30 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Category]]]] GetAll() on controller CompoundResearchAPI.Controllers.CategoriesController (CompoundResearchAPI).
+2026-08-11 11:59:08.640 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/targets - null null
+2026-08-11 11:59:08.705 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Description", "c"."Name"
+FROM "Categories" AS "c"
+ORDER BY "c"."Name"
+2026-08-11 11:59:08.725 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:08.777 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:08.782 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Category, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:08.793 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:08.840 +05:30 [INF] Route matched with {action = "GetAll", controller = "Targets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.Entities.Target]]]] GetAll() on controller CompoundResearchAPI.Controllers.TargetsController (CompoundResearchAPI).
+2026-08-11 11:59:08.826 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI) in 132.7835ms
+2026-08-11 11:59:08.853 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 933.0658ms
+2026-08-11 11:59:08.878 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."Name"
+FROM "Targets" AS "t"
+ORDER BY "t"."Name"
+2026-08-11 11:59:08.878 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/compounds - null null
+2026-08-11 11:59:08.883 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CategoriesController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:08.898 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:59:08.911 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.Entities.Target, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:08.931 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:08.939 +05:30 [INF] GET /api/categories responded 200 in 543ms
+2026-08-11 11:59:08.954 +05:30 [INF] GET /api/compounds responded 200 in 1310ms
+2026-08-11 11:59:08.960 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI) in 86.9249ms
+2026-08-11 11:59:08.966 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:59:08.980 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 657.8065ms
+2026-08-11 11:59:08.995 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 1512.7984ms
+2026-08-11 11:59:09.007 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.TargetsController.GetAll (CompoundResearchAPI)'
+2026-08-11 11:59:09.015 +05:30 [INF] Route matched with {action = "Search", controller = "Compounds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[System.Collections.Generic.List`1[CompoundResearchAPI.Models.DTOs.CompoundDto]]]] Search(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[CompoundResearchAPI.Models.Enums.CompoundStatus]) on controller CompoundResearchAPI.Controllers.CompoundsController (CompoundResearchAPI).
+2026-08-11 11:59:09.133 +05:30 [INF] GET /api/targets responded 200 in 407ms
+2026-08-11 11:59:09.196 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."CreatedAt", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."IsActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM "Compounds" AS "c"
+LEFT JOIN "Categories" AS "c0" ON "c"."CategoryId" = "c0"."Id"
+INNER JOIN "AspNetUsers" AS "a" ON "c"."CreatedById" = "a"."Id"
+LEFT JOIN (
+    SELECT "c1"."CompoundId", "c1"."TargetId", "c1"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c1"
+    INNER JOIN "Targets" AS "t" ON "c1"."TargetId" = "t"."Id"
+) AS "s" ON "c"."Id" = "s"."CompoundId"
+ORDER BY "c"."Name", "c"."Id", "c0"."Id", "a"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:59:09.254 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/targets - 200 null application/json; charset=utf-8 613.8025ms
+2026-08-11 11:59:09.308 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[System.Collections.Generic.List`1[[CompoundResearchAPI.Models.DTOs.CompoundDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-11 11:59:09.345 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI) in 167.9086ms
+2026-08-11 11:59:09.365 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.CompoundsController.Search (CompoundResearchAPI)'
+2026-08-11 11:59:09.371 +05:30 [INF] GET /api/compounds responded 200 in 440ms
+2026-08-11 11:59:09.392 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/compounds - 200 null application/json; charset=utf-8 514.1549ms
+2026-08-11 11:59:18.126 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:59:18.126 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:59:18.180 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:18.205 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:18.207 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 27ms
+2026-08-11 11:59:18.210 +05:30 [INF] OPTIONS /api/dashboard/stats responded 204 in 4ms
+2026-08-11 11:59:18.231 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 104.4221ms
+2026-08-11 11:59:18.242 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/dashboard/stats - 204 null null 115.6767ms
+2026-08-11 11:59:18.298 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:59:18.323 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:18.328 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:59:18.363 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:59:18.482 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:59:18.513 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:59:18.547 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:59:18.579 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:59:18.704 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:59:18.743 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:59:18.763 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 380.4608ms
+2026-08-11 11:59:18.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - null null
+2026-08-11 11:59:18.777 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:59:18.799 +05:30 [INF] CORS policy execution successful.
+2026-08-11 11:59:18.808 +05:30 [INF] GET /api/dashboard/stats responded 200 in 485ms
+2026-08-11 11:59:18.813 +05:30 [INF] Executing endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:59:18.829 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 531.5637ms
+2026-08-11 11:59:18.835 +05:30 [INF] Route matched with {action = "GetStats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CompoundResearchAPI.Helpers.ApiResponse`1[CompoundResearchAPI.Controllers.DashboardStatsDto]]] GetStats() on controller CompoundResearchAPI.Controllers.DashboardController (CompoundResearchAPI).
+2026-08-11 11:59:18.879 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Compounds" AS "c"
+2026-08-11 11:59:18.902 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Targets" AS "t"
+2026-08-11 11:59:18.922 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Documents" AS "d"
+2026-08-11 11:59:18.939 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "QueryHistories" AS "q"
+2026-08-11 11:59:18.960 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c1"."Id", "c1"."CategoryId", "c1"."CreatedAt", "c1"."CreatedById", "c1"."Description", "c1"."MolecularFormula", "c1"."Name", "c1"."ReviewComments", "c1"."Status", "c1"."Synonym", "c1"."UpdatedAt", "c0"."Id", "c0"."Description", "c0"."Name", "s"."CompoundId", "s"."TargetId", "s"."RelationshipType", "s"."Id", "s"."Description", "s"."Name"
+FROM (
+    SELECT "c"."Id", "c"."CategoryId", "c"."CreatedAt", "c"."CreatedById", "c"."Description", "c"."MolecularFormula", "c"."Name", "c"."ReviewComments", "c"."Status", "c"."Synonym", "c"."UpdatedAt"
+    FROM "Compounds" AS "c"
+    ORDER BY "c"."CreatedAt" DESC
+    LIMIT @p
+) AS "c1"
+LEFT JOIN "Categories" AS "c0" ON "c1"."CategoryId" = "c0"."Id"
+LEFT JOIN (
+    SELECT "c2"."CompoundId", "c2"."TargetId", "c2"."RelationshipType", "t"."Id", "t"."Description", "t"."Name"
+    FROM "CompoundTargets" AS "c2"
+    INNER JOIN "Targets" AS "t" ON "c2"."TargetId" = "t"."Id"
+) AS "s" ON "c1"."Id" = "s"."CompoundId"
+ORDER BY "c1"."CreatedAt" DESC, "c1"."Id", "c0"."Id", "s"."CompoundId", "s"."TargetId"
+2026-08-11 11:59:18.993 +05:30 [INF] Executing OkObjectResult, writing value of type 'CompoundResearchAPI.Helpers.ApiResponse`1[[CompoundResearchAPI.Controllers.DashboardStatsDto, CompoundResearchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-11 11:59:19.006 +05:30 [INF] Executed action CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI) in 129.1205ms
+2026-08-11 11:59:19.024 +05:30 [INF] Executed endpoint 'CompoundResearchAPI.Controllers.DashboardController.GetStats (CompoundResearchAPI)'
+2026-08-11 11:59:19.043 +05:30 [INF] GET /api/dashboard/stats responded 200 in 244ms
+2026-08-11 11:59:19.103 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/dashboard/stats - 200 null application/json; charset=utf-8 336.0373ms
+2026-08-11 12:00:00.869 +05:30 [INF] Application is shutting down...
