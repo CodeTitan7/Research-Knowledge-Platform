@@ -38,8 +38,55 @@ namespace CompoundResearchAPI.Services.Implementations
             _logger = logger;
         }
 
+        // Narrow, deliberately short list of greeting/pleasantry patterns. This is NOT a general
+        // topic classifier — it must only catch things a reasonable person would recognize as
+        // small talk, never anything that could plausibly be a real (even off-topic) question.
+        // Off-topic factual questions like "melting point of unobtainium-42" must NOT match this
+        // and must continue through the normal RAG pipeline, which correctly reports no evidence.
+        private static readonly string[] ChitChatPatterns =
+        {
+            "hi", "hello", "hey", "how are you", "how's it going", "what's up",
+            "good morning", "good afternoon", "good evening", "thanks", "thank you",
+            "bye", "goodbye", "see you", "who are you", "what can you do"
+        };
+
+        // Returns true only for short messages that are essentially just a greeting/pleasantry,
+        // not for longer questions that merely contain a greeting word somewhere in them.
+        private static bool IsChitChat(string question)
+        {
+            var trimmed = question.Trim().TrimEnd('.', '!', '?').ToLowerInvariant();
+
+            // Guard against false positives: a real question can be long and still start with
+            // "hi" (e.g. "hi, does metformin interact with alcohol?"). Only treat it as chit-chat
+            // if the whole message is short and matches a pattern closely, not just contains one.
+            if (trimmed.Length > 40) return false;
+
+            return ChitChatPatterns.Any(pattern =>
+                trimmed == pattern || trimmed.StartsWith(pattern + " ") || trimmed.StartsWith(pattern + ","));
+        }
+
         public async Task<QueryResponseDto> AskAsync(QueryRequestDto request, string userId)
         {
+            // Handle greetings/pleasantries without going through retrieval at all — these are not
+            // research questions, so it would be misleading to run them through the evidence
+            // pipeline and report "no evidence found" as if the user asked something out of scope.
+            if (IsChitChat(request.Question))
+            {
+                const string chitChatReply =
+                    "Hello! I'm a research assistant for compound and target information. " +
+                    "Ask me a question about a compound, target, or research topic in the reference collection, " +
+                    "and I'll answer using the available sources.";
+
+                await LogQueryAsync(userId, request.Question, chitChatReply, "");
+
+                return new QueryResponseDto
+                {
+                    Answer = chitChatReply,
+                    Sources = new List<SourceReferenceDto>(),
+                    HasSufficientEvidence = false
+                };
+            }
+
             var questionEmbedding = await _embeddingService.GenerateEmbeddingAsync(request.Question);
             var candidateChunks = await _chunkRepository.GetChunksAsync(request.CompoundId);
 
@@ -185,16 +232,38 @@ namespace CompoundResearchAPI.Services.Implementations
 
         // Lightweight heuristic: catches the model explicitly saying it found no relevant
         // information, which is a stronger signal than a raw similarity score in a small corpus.
+        //
+        // NOTE: exact-phrase matching is inherently brittle (e.g. "does not contain information"
+        // misses "does not contain ANY information"). This checks for a negation word/phrase
+        // co-occurring with an evidence-related word within the answer, which tolerates small
+        // wording variation. It is still a heuristic, not a guarantee — see project limitations.
         private static bool AnswerIndicatesNoEvidence(string answer)
         {
             var lowered = answer.ToLowerInvariant();
-            string[] noEvidencePhrases =
+
+            string[] negationMarkers =
             {
-                "no information", "no mention", "does not mention", "no relevant",
-                "not mentioned", "cannot answer", "can't answer", "don't have information",
-                "do not have information", "no data", "not covered", "not addressed"
+                "does not", "doesn't", "do not", "don't", "cannot", "can't",
+                "no relevant", "no mention", "no information", "no data",
+                "not covered", "not addressed", "unrelated to", "outside the scope"
             };
-            return noEvidencePhrases.Any(phrase => lowered.Contains(phrase));
+
+            string[] evidenceWords =
+            {
+                "information", "mention", "data", "answer", "address", "relevant"
+            };
+
+            return negationMarkers.Any(marker =>
+            {
+                var idx = lowered.IndexOf(marker, StringComparison.Ordinal);
+                if (idx < 0) return false;
+
+                // Look at a small window of text after the negation marker rather than
+                // requiring the evidence word to sit immediately next to it.
+                var windowEnd = Math.Min(lowered.Length, idx + marker.Length + 40);
+                var window = lowered[idx..windowEnd];
+                return evidenceWords.Any(word => window.Contains(word));
+            });
         }
 
         private async Task LogQueryAsync(string userId, string question, string answer, string sourceChunkIds)
