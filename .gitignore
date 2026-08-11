@@ -4,3 +4,11 @@ obj/
 *.user
 *.suo
 appsettings.json
+# React / Node
+compound-research-frontend/node_modules/
+compound-research-frontend/dist/
+
+# Environment variables
+compound-research-frontend/.env
+compound-research-frontend/.env.*
+!compound-research-frontend/.env.example
