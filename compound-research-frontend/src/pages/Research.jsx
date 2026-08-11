@@ -1,4 +1,4 @@
-
+import React, { useState } from "react";
 import {
   Alert,
   Box,
@@ -19,120 +19,54 @@ import SendIcon from "@mui/icons-material/Send";
 import DescriptionIcon from "@mui/icons-material/Description";
 import ScienceIcon from "@mui/icons-material/Science";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
-
-
-const mockAnswer = {
-  answer:
-    "Based on the available research evidence, Imatinib is associated with several protein targets, most notably BCR-ABL1. The available references also describe activity involving KIT and PDGFR. These findings are based only on the documents currently available in the research knowledge base.",
-
-  evidence: [
-    {
-      source: "BCR-ABL1 and Tyrosine Kinase Inhibitors",
-      page: 4,
-      excerpt:
-        "The document describes BCR-ABL1 as a primary molecular target of imatinib.",
-    },
-
-    {
-      source: "Imatinib Research Review",
-      page: 7,
-      excerpt:
-        "Imatinib also demonstrates activity against KIT and PDGFR-associated signaling.",
-    },
-  ],
-};
-
+import { researchService } from "../services/api";
 
 function Research() {
   const [searchParams] = useSearchParams();
+  const compoundId = searchParams.get("compound");
+  const documentId = searchParams.get("document");
 
-  const compoundId =
-    searchParams.get("compound");
+  const [question, setQuestion] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
 
-  const documentId =
-    searchParams.get("document");
-
-
-  const [question, setQuestion] =
-    useState("");
-
-  const [loading, setLoading] =
-    useState(false);
-
-  const [result, setResult] =
-    useState(null);
-
-  const [error, setError] =
-    useState("");
-
-
-  /*
-   * Ask the research assistant.
-   *
-   * For now this simulates an API call.
-   */
-  const handleAsk = () => {
-
+  const handleAsk = async () => {
     if (!question.trim()) {
-
-      setError(
-        "Please enter a research question."
-      );
-
+      setError("Please enter a research question.");
       return;
     }
 
+    try {
+      setError("");
+      setLoading(true);
+      setResult(null);
 
-    setError("");
-
-    setLoading(true);
-
-    setResult(null);
-
-
-    /*
-     * Simulate API response.
-     *
-     * Later this will become:
-     *
-     * POST /api/research/query
-     */
-    setTimeout(() => {
-
+      const res = await researchService.ask(question.trim(), compoundId);
+      if (res.success && res.data) {
+        setResult(res.data);
+      }
+    } catch (err) {
+      setError(err.message || "Failed to query the Research AI Agent.");
+    } finally {
       setLoading(false);
-
-      setResult(mockAnswer);
-
-    }, 1500);
+    }
   };
 
-
-  /*
-   * Allow Enter to submit.
-   */
   const handleKeyDown = (event) => {
-
-    if (
-      event.key === "Enter" &&
-      !event.shiftKey
-    ) {
-
+    if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
-
       handleAsk();
     }
   };
 
-
   return (
     <Box>
-
       {/* Page heading */}
       <Box sx={{ mb: 3 }}>
-
         <Box
           sx={{
             display: "flex",
@@ -140,7 +74,6 @@ function Research() {
             gap: 1,
           }}
         >
-
           <SmartToyIcon
             color="primary"
             sx={{ fontSize: 32 }}
@@ -150,71 +83,45 @@ function Research() {
             variant="h4"
             fontWeight="bold"
           >
-            Research Assistant
+            AI Research Assistant
           </Typography>
-
         </Box>
-
 
         <Typography
           color="text.secondary"
           sx={{ mt: 0.5 }}
         >
-          Ask questions using the controlled
-          research knowledge base.
+          Ask questions using vector-indexed research documents and grounded AI generation.
         </Typography>
-
       </Box>
-
 
       {/* Context information */}
       {(compoundId || documentId) && (
-
         <Alert
           severity="info"
           sx={{ mb: 3 }}
         >
-
           {compoundId && (
             <>
-              You are asking about compound{" "}
-              <strong>
-                #{compoundId}
-              </strong>
-              .
+              Narrowing search scope to compound{" "}
+              <strong>#{compoundId}</strong>.
             </>
           )}
-
           {documentId && (
             <>
-              You are asking about document{" "}
-              <strong>
-                #{documentId}
-              </strong>
-              .
+              {" "}Focused on document <strong>#{documentId}</strong>.
             </>
           )}
-
         </Alert>
-
       )}
 
+      {error && <Alert severity="error" sx={{ mb: 3 }}>{error}</Alert>}
 
-      <Grid
-        container
-        spacing={3}
-      >
-
+      <Grid container spacing={3}>
         {/* Question section */}
-        <Grid
-          item
-          xs={12}
-        >
-
+        <Grid item xs={12}>
           <Card>
-
             <CardContent>
-
               <Typography
                 variant="h6"
                 fontWeight="bold"
@@ -223,90 +130,61 @@ function Research() {
                 Ask a Research Question
               </Typography>
 
-
               <Typography
                 variant="body2"
                 color="text.secondary"
                 sx={{ mb: 2 }}
               >
-                Questions are answered using
-                information retrieved from the
-                available research documents.
+                Queries embed your prompt and perform vector similarity search against uploaded reference documents, grounding the response strictly in real evidence.
               </Typography>
-
 
               <TextField
                 fullWidth
                 multiline
-                minRows={4}
-                placeholder="Example: What targets are associated with Imatinib?"
+                minRows={3}
+                placeholder="Example: How does Metformin lower blood sugar and activate AMPK?"
                 value={question}
-                onChange={(event) =>
-                  setQuestion(
-                    event.target.value
-                  )
-                }
+                onChange={(event) => setQuestion(event.target.value)}
                 onKeyDown={handleKeyDown}
                 error={Boolean(error)}
-                helperText={
-                  error ||
-                  "Press Enter to ask or use the button below."
-                }
+                helperText="Press Enter to submit question."
+                disabled={loading}
               />
-
 
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent:
-                    "flex-end",
+                  justifyContent: "flex-end",
                   mt: 2,
                 }}
               >
-
                 <Button
                   variant="contained"
                   startIcon={
-                    loading
-                      ? (
-                        <CircularProgress
-                          size={18}
-                          color="inherit"
-                        />
-                      )
-                      : (
-                        <SendIcon />
-                      )
+                    loading ? (
+                      <CircularProgress
+                        size={18}
+                        color="inherit"
+                      />
+                    ) : (
+                      <SendIcon />
+                    )
                   }
                   onClick={handleAsk}
                   disabled={loading}
                 >
-                  {loading
-                    ? "Searching Evidence..."
-                    : "Ask Research AI"}
+                  {loading ? "RAG Vector Searching..." : "Ask Research AI"}
                 </Button>
-
               </Box>
-
             </CardContent>
-
           </Card>
-
         </Grid>
-
 
         {/* Loading state */}
         {loading && (
-
-          <Grid
-            item
-            xs={12}
-          >
-
+          <Grid item xs={12}>
             <Card>
-
               <CardContent>
-
                 <Box
                   sx={{
                     display: "flex",
@@ -314,279 +192,137 @@ function Research() {
                     gap: 2,
                   }}
                 >
-
                   <CircularProgress />
-
                   <Box>
-
-                    <Typography
-                      fontWeight="bold"
-                    >
-                      Searching the knowledge base...
+                    <Typography fontWeight="bold">
+                      Searching knowledge base & generating AI response...
                     </Typography>
-
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Retrieving relevant research
-                      evidence.
+                    <Typography variant="body2" color="text.secondary">
+                      Computing embeddings, calculating cosine similarities, and retrieving evidence chunks.
                     </Typography>
-
                   </Box>
-
                 </Box>
-
               </CardContent>
-
             </Card>
-
           </Grid>
-
         )}
-
 
         {/* Answer */}
         {result && !loading && (
-
           <>
-            <Grid
-              item
-              xs={12}
-              md={8}
-            >
-
-              <Card>
-
+            <Grid item xs={12} md={7}>
+              <Card sx={{ height: "100%" }}>
                 <CardContent>
-
                   <Box
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 1,
+                      justifyContent: "space-between",
                       mb: 2,
                     }}
                   >
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                      <SmartToyIcon color="primary" />
+                      <Typography variant="h6" fontWeight="bold">
+                        AI Grounded Answer
+                      </Typography>
+                    </Box>
 
-                    <SmartToyIcon
-                      color="primary"
+                    <Chip
+                      icon={result.hasSufficientEvidence ? <CheckCircleIcon /> : <WarningAmberIcon />}
+                      label={result.hasSufficientEvidence ? "Grounded in Evidence" : "Low Evidence"}
+                      color={result.hasSufficientEvidence ? "success" : "warning"}
+                      size="small"
                     />
-
-                    <Typography
-                      variant="h6"
-                      fontWeight="bold"
-                    >
-                      AI-Assisted Answer
-                    </Typography>
-
                   </Box>
 
-
-                  <Typography
-                    sx={{
-                      lineHeight: 1.8,
-                    }}
-                  >
+                  <Typography sx={{ lineHeight: 1.8, whiteSpace: "pre-wrap" }}>
                     {result.answer}
                   </Typography>
 
-
                   <Alert
-                    severity="warning"
-                    icon={
-                      <WarningAmberIcon />
-                    }
+                    severity={result.hasSufficientEvidence ? "info" : "warning"}
+                    icon={<WarningAmberIcon />}
                     sx={{ mt: 3 }}
                   >
-                    This answer is generated from
-                    retrieved research evidence.
-                    Always verify important
-                    research claims against the
-                    cited sources.
+                    This response was dynamically computed by AI using retrieved vector evidence chunks from your research database.
                   </Alert>
-
                 </CardContent>
-
               </Card>
-
             </Grid>
-
 
             {/* Sources */}
-            <Grid
-              item
-              xs={12}
-              md={4}
-            >
-
-              <Card>
-
+            <Grid item xs={12} md={5}>
+              <Card sx={{ height: "100%" }}>
                 <CardContent>
-
-                  <Typography
-                    variant="h6"
-                    fontWeight="bold"
-                    gutterBottom
-                  >
-                    Sources
+                  <Typography variant="h6" fontWeight="bold" gutterBottom>
+                    Retrieved Vector Sources
                   </Typography>
 
-
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ mb: 2 }}
-                  >
-                    Evidence retrieved from the
-                    research knowledge base.
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    Evidence chunks retrieved from the vector store.
                   </Typography>
 
-
-                  {result.evidence.map(
-                    (source, index) => (
-
-                      <Paper
-                        key={index}
-                        variant="outlined"
-                        sx={{
-                          p: 2,
-                          mb: 2,
-                        }}
-                      >
-
-                        <Box
-                          sx={{
-                            display: "flex",
-                            gap: 1,
-                            alignItems:
-                              "flex-start",
-                          }}
-                        >
-
-                          <DescriptionIcon
-                            color="primary"
-                            fontSize="small"
-                          />
-
-                          <Box>
-
-                            <Typography
-                              fontWeight="bold"
-                              variant="body2"
-                            >
-                              [{index + 1}]{" "}
-                              {source.source}
+                  {(!result.sources || result.sources.length === 0) ? (
+                    <Typography color="text.secondary">
+                      No matching vector chunks were found in the database for this query.
+                    </Typography>
+                  ) : (
+                    result.sources.map((source, index) => (
+                      <Paper key={source.chunkId || index} variant="outlined" sx={{ p: 2, mb: 2 }}>
+                        <Box sx={{ display: "flex", gap: 1, alignItems: "flex-start", justifyContent: "space-between" }}>
+                          <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                            <DescriptionIcon color="primary" fontSize="small" />
+                            <Typography fontWeight="bold" variant="body2">
+                              [{index + 1}] {source.documentTitle}
                             </Typography>
-
-
-                            <Chip
-                              label={`Page ${source.page}`}
-                              size="small"
-                              sx={{ mt: 1 }}
-                            />
-
                           </Box>
 
+                          {source.relevanceScore !== undefined && (
+                            <Chip
+                              label={`Similarity: ${(source.relevanceScore * 100).toFixed(1)}%`}
+                              size="small"
+                              color="primary"
+                              variant="outlined"
+                            />
+                          )}
                         </Box>
 
+                        <Divider sx={{ my: 1.5 }} />
 
-                        <Divider
-                          sx={{ my: 1.5 }}
-                        />
-
-
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          sx={{
-                            lineHeight: 1.6,
-                          }}
-                        >
-                          {source.excerpt}
+                        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                          "{source.excerptText}"
                         </Typography>
-
                       </Paper>
-
-                    )
+                    ))
                   )}
-
                 </CardContent>
-
               </Card>
-
             </Grid>
           </>
-
         )}
 
-
         {/* Empty state */}
-        {!result &&
-          !loading && (
-
-            <Grid
-              item
-              xs={12}
-            >
-
-              <Card>
-
-                <CardContent>
-
-                  <Box
-                    sx={{
-                      textAlign: "center",
-                      py: 5,
-                    }}
-                  >
-
-                    <ScienceIcon
-                      sx={{
-                        fontSize: 55,
-                        color:
-                          "text.secondary",
-                        mb: 1,
-                      }}
-                    />
-
-                    <Typography
-                      variant="h6"
-                      fontWeight="bold"
-                    >
-                      Research Evidence Search
-                    </Typography>
-
-                    <Typography
-                      color="text.secondary"
-                      sx={{
-                        maxWidth: 600,
-                        mx: "auto",
-                        mt: 1,
-                      }}
-                    >
-                      Ask a question about a
-                      compound, target, disease,
-                      or research topic. The system
-                      will retrieve relevant evidence
-                      from the available documents.
-                    </Typography>
-
-                  </Box>
-
-                </CardContent>
-
-              </Card>
-
-            </Grid>
-
-          )}
-
+        {!result && !loading && (
+          <Grid item xs={12}>
+            <Card>
+              <CardContent>
+                <Box sx={{ textAlign: "center", py: 5 }}>
+                  <ScienceIcon sx={{ fontSize: 55, color: "text.secondary", mb: 1 }} />
+                  <Typography variant="h6" fontWeight="bold">
+                    Research Knowledge Base Search
+                  </Typography>
+                  <Typography color="text.secondary" sx={{ maxWidth: 600, mx: "auto", mt: 1 }}>
+                    Type any research question about compounds, mechanisms of action, targets, or clinical reviews. The AI agent will query vector embeddings and summarize evidence for you.
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+        )}
       </Grid>
-
     </Box>
   );
 }
-
 
 export default Research;

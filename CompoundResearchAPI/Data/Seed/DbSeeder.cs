@@ -20,7 +20,7 @@ namespace CompoundResearchAPI.Data.Seed
                     await roleManager.CreateAsync(new IdentityRole(role));
             }
 
-            // 2. Default admin user
+            // 2. Default demo users (Administrator, Reviewer, Research User)
             if (await userManager.FindByEmailAsync("admin@compoundresearch.local") is null)
             {
                 var admin = new ApplicationUser
@@ -33,6 +33,34 @@ namespace CompoundResearchAPI.Data.Seed
                 var result = await userManager.CreateAsync(admin, "Admin@12345");
                 if (result.Succeeded)
                     await userManager.AddToRoleAsync(admin, UserRole.Administrator);
+            }
+
+            if (await userManager.FindByEmailAsync("reviewer@compoundresearch.local") is null)
+            {
+                var reviewer = new ApplicationUser
+                {
+                    UserName = "reviewer@compoundresearch.local",
+                    Email = "reviewer@compoundresearch.local",
+                    FullName = "Dr. Sarah Jenkins (Reviewer)",
+                    EmailConfirmed = true
+                };
+                var result = await userManager.CreateAsync(reviewer, "Reviewer@12345");
+                if (result.Succeeded)
+                    await userManager.AddToRoleAsync(reviewer, UserRole.Reviewer);
+            }
+
+            if (await userManager.FindByEmailAsync("researcher@compoundresearch.local") is null)
+            {
+                var researcher = new ApplicationUser
+                {
+                    UserName = "researcher@compoundresearch.local",
+                    Email = "researcher@compoundresearch.local",
+                    FullName = "Dr. Alex Rivera (Researcher)",
+                    EmailConfirmed = true
+                };
+                var result = await userManager.CreateAsync(researcher, "Researcher@12345");
+                if (result.Succeeded)
+                    await userManager.AddToRoleAsync(researcher, UserRole.ResearchUser);
             }
 
             if (context.Categories.Any()) return; // already seeded sample data

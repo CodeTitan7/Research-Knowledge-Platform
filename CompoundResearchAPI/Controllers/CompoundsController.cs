@@ -36,7 +36,7 @@ namespace CompoundResearchAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = $"{UserRole.ResearchUser},{UserRole.Administrator}")]
+        [Authorize(Roles = $"{UserRole.Reviewer},{UserRole.Administrator}")]
         public async Task<ActionResult<ApiResponse<CompoundDto>>> Create(CreateCompoundDto dto)
         {
             if (!ModelState.IsValid)
@@ -52,7 +52,7 @@ namespace CompoundResearchAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        [Authorize(Roles = $"{UserRole.ResearchUser},{UserRole.Administrator}")]
+        [Authorize(Roles = $"{UserRole.Reviewer},{UserRole.Administrator}")]
         public async Task<ActionResult<ApiResponse<CompoundDto>>> Update(int id, UpdateCompoundDto dto)
         {
             var updated = await _compoundService.UpdateAsync(id, dto);
@@ -60,7 +60,7 @@ namespace CompoundResearchAPI.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        [Authorize(Roles = UserRole.Administrator)]
+        [Authorize(Roles = $"{UserRole.Reviewer},{UserRole.Administrator}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _compoundService.DeleteAsync(id);

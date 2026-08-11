@@ -1,16 +1,20 @@
-
+import React, { useState, useEffect } from "react";
 import {
+  Alert,
   Box,
   Button,
   Card,
   CardContent,
   Checkbox,
+  CircularProgress,
   FormControl,
   FormControlLabel,
   FormGroup,
   FormHelperText,
   FormLabel,
   Grid,
+  MenuItem,
+  Select,
   TextField,
   Typography,
 } from "@mui/material";
@@ -18,571 +22,257 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SaveIcon from "@mui/icons-material/Save";
 
-import { useState } from "react";
-import {
-  useNavigate,
-  useParams,
-} from "react-router-dom";
-
-import { compounds } from "../data/mockData";
-
-
-const availableTargets = [
-  "BCR-ABL1",
-  "KIT",
-  "PDGFR",
-  "EGFR",
-  "HER2",
-  "BRAF",
-];
-
-
-const availableCategories = [
-  "Cancer",
-  "Kinase Inhibitor",
-  "EGFR Inhibitor",
-  "Monoclonal Antibody",
-];
-
+import { useNavigate, useParams } from "react-router-dom";
+import { compoundService, targetService, categoryService } from "../services/api";
 
 function CompoundForm() {
   const navigate = useNavigate();
-
   const { id } = useParams();
-
   const isEditMode = Boolean(id);
 
+  const [name, setName] = useState("");
+  const [synonym, setSynonym] = useState("");
+  const [molecularFormula, setMolecularFormula] = useState("");
+  const [description, setDescription] = useState("");
+  const [selectedCategoryId, setSelectedCategoryId] = useState("");
+  const [selectedTargetIds, setSelectedTargetIds] = useState([]);
 
-  /*
-   * Find the compound when editing.
-   */
-  const existingCompound = isEditMode
-    ? compounds.find(
-        (compound) =>
-          compound.id === Number(id)
-      )
-    : null;
+  const [availableTargets, setAvailableTargets] = useState([]);
+  const [availableCategories, setAvailableCategories] = useState([]);
 
+  const [loading, setLoading] = useState(isEditMode);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  /*
-   * Form state.
-   */
-  const [name, setName] = useState(
-    existingCompound?.name || ""
-  );
+  useEffect(() => {
+    loadMetaData();
+    if (isEditMode) {
+      loadCompoundData();
+    }
+  }, [id]);
 
-  const [identifier, setIdentifier] =
-    useState(
-      existingCompound?.identifier || ""
-    );
+  const loadMetaData = async () => {
+    try {
+      const [targetRes, catRes] = await Promise.all([
+        targetService.getAll().catch(() => ({ success: true, data: [] })),
+        categoryService.getAll().catch(() => ({ success: true, data: [] })),
+      ]);
 
-  const [description, setDescription] =
-    useState(
-      existingCompound?.description || ""
-    );
-
-  const [selectedTargets, setSelectedTargets] =
-    useState(
-      existingCompound?.targets || []
-    );
-
-  const [selectedCategories, setSelectedCategories] =
-    useState(
-      existingCompound?.categories || []
-    );
-
-
-  /*
-   * Validation errors.
-   */
-  const [errors, setErrors] = useState({});
-
-
-  /*
-   * Handle target selection.
-   */
-  const handleTargetChange = (target) => {
-    setSelectedTargets((previous) => {
-
-      if (previous.includes(target)) {
-        return previous.filter(
-          (item) => item !== target
-        );
+      if (targetRes.success && Array.isArray(targetRes.data)) {
+        setAvailableTargets(targetRes.data);
       }
-
-      return [
-        ...previous,
-        target,
-      ];
-    });
-  };
-
-
-  /*
-   * Handle category selection.
-   */
-  const handleCategoryChange = (category) => {
-    setSelectedCategories((previous) => {
-
-      if (previous.includes(category)) {
-        return previous.filter(
-          (item) => item !== category
-        );
+      if (catRes.success && Array.isArray(catRes.data)) {
+        setAvailableCategories(catRes.data);
       }
-
-      return [
-        ...previous,
-        category,
-      ];
-    });
+    } catch (err) {
+      console.error("Error loading targets/categories", err);
+    }
   };
 
-
-  /*
-   * Validate the form.
-   */
-  const validateForm = () => {
-
-    const newErrors = {};
-
-
-    if (!name.trim()) {
-      newErrors.name =
-        "Compound name is required.";
+  const loadCompoundData = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      const res = await compoundService.getById(id);
+      if (res.success && res.data) {
+        const c = res.data;
+        setName(c.name || "");
+        setSynonym(c.synonym || "");
+        setMolecularFormula(c.molecularFormula || "");
+        setDescription(c.description || "");
+      }
+    } catch (err) {
+      setError(err.message || "Failed to load compound data for editing.");
+    } finally {
+      setLoading(false);
     }
-
-
-    if (!identifier.trim()) {
-      newErrors.identifier =
-        "Identifier is required.";
-    }
-
-
-    if (!description.trim()) {
-      newErrors.description =
-        "Description is required.";
-    }
-
-
-    if (selectedTargets.length === 0) {
-      newErrors.targets =
-        "Select at least one target.";
-    }
-
-
-    if (selectedCategories.length === 0) {
-      newErrors.categories =
-        "Select at least one category.";
-    }
-
-
-    setErrors(newErrors);
-
-
-    return Object.keys(newErrors).length === 0;
   };
 
+  const handleTargetToggle = (targetId) => {
+    setSelectedTargetIds((prev) =>
+      prev.includes(targetId) ? prev.filter((tid) => tid !== targetId) : [...prev, targetId]
+    );
+  };
 
-  /*
-   * Handle form submission.
-   */
-  const handleSubmit = (event) => {
-
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-
-    if (!validateForm()) {
+    if (!name.trim()) {
+      setError("Compound name is required.");
       return;
     }
 
+    try {
+      setSubmitting(true);
+      setError("");
 
-    /*
-     * For now we only simulate the operation.
-     *
-     * Later this will become:
-     *
-     * POST /api/compounds
-     *
-     * or
-     *
-     * PUT /api/compounds/{id}
-     */
+      const payload = {
+        name: name.trim(),
+        synonym: synonym.trim() || null,
+        description: description.trim() || null,
+        molecularFormula: molecularFormula.trim() || null,
+        categoryId: selectedCategoryId ? Number(selectedCategoryId) : null,
+        targetIds: selectedTargetIds,
+      };
 
-    const compoundData = {
-      name: name.trim(),
-      identifier: identifier.trim(),
-      description: description.trim(),
-      targets: selectedTargets,
-      categories: selectedCategories,
-    };
+      if (isEditMode) {
+        await compoundService.update(id, payload);
+      } else {
+        await compoundService.create(payload);
+      }
 
-
-    console.log(
-      isEditMode
-        ? "Updating compound:"
-        : "Creating compound:",
-      compoundData
-    );
-
-
-    alert(
-      isEditMode
-        ? "Compound updated successfully."
-        : "Compound created successfully."
-    );
-
-
-    navigate("/compounds");
+      navigate("/compounds");
+    } catch (err) {
+      setError(err.message || "Failed to save compound.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-
-  /*
-   * Invalid edit ID.
-   */
-  if (isEditMode && !existingCompound) {
-
+  if (loading) {
     return (
-      <Box>
-
-        <Typography
-          variant="h5"
-          fontWeight="bold"
-          gutterBottom
-        >
-          Compound Not Found
-        </Typography>
-
-        <Typography
-          color="text.secondary"
-          sx={{ mb: 3 }}
-        >
-          The compound you are trying to edit
-          does not exist.
-        </Typography>
-
-        <Button
-          variant="contained"
-          startIcon={<ArrowBackIcon />}
-          onClick={() =>
-            navigate("/compounds")
-          }
-        >
-          Back to Compounds
-        </Button>
-
+      <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
+        <CircularProgress />
       </Box>
     );
   }
 
-
   return (
     <Box>
-
-      {/* Back button */}
       <Button
         startIcon={<ArrowBackIcon />}
-        onClick={() =>
-          navigate(
-            isEditMode
-              ? `/compounds/${id}`
-              : "/compounds"
-          )
-        }
+        onClick={() => navigate(isEditMode ? `/compounds/${id}` : "/compounds")}
         sx={{ mb: 2 }}
       >
         Back
       </Button>
 
-
-      {/* Page heading */}
-      <Typography
-        variant="h4"
-        fontWeight="bold"
-        gutterBottom
-      >
-        {isEditMode
-          ? "Edit Compound"
-          : "Add Compound"}
+      <Typography variant="h4" fontWeight="bold" gutterBottom>
+        {isEditMode ? "Edit Compound" : "Add Compound"}
       </Typography>
 
-      <Typography
-        color="text.secondary"
-        sx={{ mb: 3 }}
-      >
+      <Typography color="text.secondary" sx={{ mb: 3 }}>
         {isEditMode
-          ? "Update the compound information."
-          : "Add a new compound to the research knowledge base."}
+          ? "Update the compound details in the research platform."
+          : "Register a new compound into the knowledge base."}
       </Typography>
 
+      {error && <Alert severity="error" sx={{ mb: 3 }}>{error}</Alert>}
 
-      {/* Form */}
       <Card>
-
         <CardContent>
-
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-          >
-
-            <Grid
-              container
-              spacing={3}
-            >
-
-              {/* Compound name */}
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-
+          <Box component="form" onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   label="Compound Name"
                   value={name}
-                  onChange={(event) =>
-                    setName(event.target.value)
-                  }
-                  error={Boolean(errors.name)}
-                  helperText={errors.name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                 />
-
               </Grid>
 
-
-              {/* Identifier */}
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-
+              <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
-                  label="Identifier"
-                  placeholder="e.g. DB00619"
-                  value={identifier}
-                  onChange={(event) =>
-                    setIdentifier(
-                      event.target.value
-                    )
-                  }
-                  error={Boolean(
-                    errors.identifier
-                  )}
-                  helperText={errors.identifier}
-                  required
+                  label="Molecular Formula"
+                  placeholder="e.g. C29H31N7O"
+                  value={molecularFormula}
+                  onChange={(e) => setMolecularFormula(e.target.value)}
                 />
-
               </Grid>
 
+              <Grid item xs={12} md={6}>
+                <TextField
+                  fullWidth
+                  label="Synonym / Trade Name"
+                  placeholder="e.g. Dimethylbiguanide"
+                  value={synonym}
+                  onChange={(e) => setSynonym(e.target.value)}
+                />
+              </Grid>
 
-              {/* Description */}
-              <Grid
-                item
-                xs={12}
-              >
+              <Grid item xs={12} md={6}>
+                <FormControl fullWidth>
+                  <FormLabel sx={{ mb: 1 }}>Category</FormLabel>
+                  <Select
+                    value={selectedCategoryId}
+                    onChange={(e) => setSelectedCategoryId(e.target.value)}
+                    displayEmpty
+                  >
+                    <MenuItem value="">
+                      <em>None / Unassigned</em>
+                    </MenuItem>
+                    {availableCategories.map((cat) => (
+                      <MenuItem key={cat.id} value={cat.id}>
+                        {cat.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Grid>
 
+              <Grid item xs={12}>
                 <TextField
                   fullWidth
                   multiline
                   minRows={4}
-                  label="Description"
+                  label="Description / Research Summary"
                   value={description}
-                  onChange={(event) =>
-                    setDescription(
-                      event.target.value
-                    )
-                  }
-                  error={Boolean(
-                    errors.description
-                  )}
-                  helperText={errors.description}
-                  required
+                  onChange={(e) => setDescription(e.target.value)}
                 />
-
               </Grid>
 
-
-              {/* Targets */}
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-
-                <FormControl
-                  component="fieldset"
-                  error={Boolean(errors.targets)}
-                  fullWidth
-                >
-
-                  <FormLabel
-                    component="legend"
-                    sx={{ mb: 1 }}
-                  >
-                    Targets
-                  </FormLabel>
-
-
-                  <FormGroup>
-
-                    {availableTargets.map(
-                      (target) => (
-
+              {availableTargets.length > 0 && (
+                <Grid item xs={12}>
+                  <FormControl component="fieldset" fullWidth>
+                    <FormLabel component="legend" sx={{ mb: 1 }}>
+                      Biological Targets
+                    </FormLabel>
+                    <FormGroup row>
+                      {availableTargets.map((target) => (
                         <FormControlLabel
-                          key={target}
+                          key={target.id}
                           control={
                             <Checkbox
-                              checked={selectedTargets.includes(
-                                target
-                              )}
-                              onChange={() =>
-                                handleTargetChange(
-                                  target
-                                )
-                              }
+                              checked={selectedTargetIds.includes(target.id)}
+                              onChange={() => handleTargetToggle(target.id)}
                             />
                           }
-                          label={target}
+                          label={target.name}
                         />
+                      ))}
+                    </FormGroup>
+                  </FormControl>
+                </Grid>
+              )}
 
-                      )
-                    )}
-
-                  </FormGroup>
-
-
-                  {errors.targets && (
-                    <FormHelperText>
-                      {errors.targets}
-                    </FormHelperText>
-                  )}
-
-                </FormControl>
-
-              </Grid>
-
-
-              {/* Categories */}
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-
-                <FormControl
-                  component="fieldset"
-                  error={Boolean(
-                    errors.categories
-                  )}
-                  fullWidth
-                >
-
-                  <FormLabel
-                    component="legend"
-                    sx={{ mb: 1 }}
-                  >
-                    Categories
-                  </FormLabel>
-
-
-                  <FormGroup>
-
-                    {availableCategories.map(
-                      (category) => (
-
-                        <FormControlLabel
-                          key={category}
-                          control={
-                            <Checkbox
-                              checked={selectedCategories.includes(
-                                category
-                              )}
-                              onChange={() =>
-                                handleCategoryChange(
-                                  category
-                                )
-                              }
-                            />
-                          }
-                          label={category}
-                        />
-
-                      )
-                    )}
-
-                  </FormGroup>
-
-
-                  {errors.categories && (
-                    <FormHelperText>
-                      {errors.categories}
-                    </FormHelperText>
-                  )}
-
-                </FormControl>
-
-              </Grid>
-
-
-              {/* Form actions */}
-              <Grid
-                item
-                xs={12}
-              >
-
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                    gap: 2,
-                    mt: 2,
-                  }}
-                >
-
+              <Grid item xs={12}>
+                <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2, mt: 2 }}>
                   <Button
                     variant="outlined"
-                    onClick={() =>
-                      navigate(
-                        isEditMode
-                          ? `/compounds/${id}`
-                          : "/compounds"
-                      )
-                    }
+                    onClick={() => navigate(isEditMode ? `/compounds/${id}` : "/compounds")}
+                    disabled={submitting}
                   >
                     Cancel
                   </Button>
 
-
                   <Button
                     type="submit"
                     variant="contained"
-                    startIcon={<SaveIcon />}
+                    startIcon={submitting ? <CircularProgress size={18} color="inherit" /> : <SaveIcon />}
+                    disabled={submitting}
                   >
-                    {isEditMode
-                      ? "Save Changes"
-                      : "Create Compound"}
+                    {isEditMode ? "Save Changes" : "Create Compound"}
                   </Button>
-
                 </Box>
-
               </Grid>
-
             </Grid>
-
           </Box>
-
         </CardContent>
-
       </Card>
-
     </Box>
   );
 }
 
-
 export default CompoundForm;
-

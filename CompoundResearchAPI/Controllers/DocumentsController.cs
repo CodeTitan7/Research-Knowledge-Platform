@@ -67,7 +67,7 @@ namespace CompoundResearchAPI.Controllers
         }
 
         [HttpPost("upload")]
-        [Authorize(Roles = $"{UserRole.ResearchUser},{UserRole.Administrator}")]
+        [Authorize(Roles = $"{UserRole.Reviewer},{UserRole.Administrator}")]
         [RequestSizeLimit(10_000_000)]
         public async Task<ActionResult<ApiResponse<DocumentDto>>> Upload([FromForm] IFormFile file, [FromForm] UploadDocumentDto dto)
         {
@@ -84,7 +84,7 @@ namespace CompoundResearchAPI.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        [Authorize(Roles = UserRole.Administrator)]
+        [Authorize(Roles = $"{UserRole.Reviewer},{UserRole.Administrator}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _documentService.DeleteAsync(id);

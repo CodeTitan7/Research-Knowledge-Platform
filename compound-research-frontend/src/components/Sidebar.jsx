@@ -18,12 +18,15 @@ import HistoryIcon from "@mui/icons-material/History";
 import PeopleIcon from "@mui/icons-material/People";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const drawerWidth = 240;
 
 function Sidebar() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { logout, userRole } = useAuth();
 
   const mainMenuItems = [
     {
@@ -54,6 +57,7 @@ function Sidebar() {
   ];
 
   const handleLogout = () => {
+    logout();
     navigate("/");
   };
 
@@ -96,63 +100,72 @@ function Sidebar() {
 
       {/* Main menu */}
       <List sx={{ padding: 1 }}>
-        {mainMenuItems.map((item) => (
-          <ListItem
-            key={item.text}
-            disablePadding
-          >
-            <ListItemButton
-              component={Link}
-              to={item.path}
-              sx={{
-                borderRadius: 2,
-                marginBottom: 0.5,
-              }}
+        {mainMenuItems.map((item) => {
+          const selected = location.pathname.startsWith(item.path);
+          return (
+            <ListItem
+              key={item.text}
+              disablePadding
             >
-              <ListItemIcon>
-                {item.icon}
-              </ListItemIcon>
+              <ListItemButton
+                component={Link}
+                to={item.path}
+                selected={selected}
+                sx={{
+                  borderRadius: 2,
+                  marginBottom: 0.5,
+                }}
+              >
+                <ListItemIcon color={selected ? "primary" : "inherit"}>
+                  {item.icon}
+                </ListItemIcon>
 
-              <ListItemText
-                primary={item.text}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
+                <ListItemText
+                  primary={item.text}
+                />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
       </List>
 
       <Divider />
 
-      {/* Administration */}
-      <Typography
-        variant="caption"
-        color="text.secondary"
-        sx={{
-          paddingX: 2,
-          paddingTop: 2,
-          paddingBottom: 1,
-        }}
-      >
-        ADMINISTRATION
-      </Typography>
-
-      <List sx={{ padding: 1 }}>
-        <ListItem disablePadding>
-          <ListItemButton
-            component={Link}
-            to="/users"
+      {/* Administration (Administrator only) */}
+      {userRole === "Administrator" && (
+        <>
+          <Typography
+            variant="caption"
+            color="text.secondary"
             sx={{
-              borderRadius: 2,
+              paddingX: 2,
+              paddingTop: 2,
+              paddingBottom: 1,
             }}
           >
-            <ListItemIcon>
-              <PeopleIcon />
-            </ListItemIcon>
+            ADMINISTRATION
+          </Typography>
 
-            <ListItemText primary="Users" />
-          </ListItemButton>
-        </ListItem>
-      </List>
+          <List sx={{ padding: 1 }}>
+            <ListItem disablePadding>
+              <ListItemButton
+                component={Link}
+                to="/users"
+                selected={location.pathname === "/users"}
+                sx={{
+                  borderRadius: 2,
+                }}
+              >
+                <ListItemIcon>
+                  <PeopleIcon />
+                </ListItemIcon>
+
+                <ListItemText primary="User Management" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </>
+      )}
 
       {/* Logout at bottom */}
       <Box sx={{ marginTop: "auto", padding: 1 }}>
@@ -161,9 +174,10 @@ function Sidebar() {
             onClick={handleLogout}
             sx={{
               borderRadius: 2,
+              color: "error.main",
             }}
           >
-            <ListItemIcon>
+            <ListItemIcon sx={{ color: "error.main" }}>
               <LogoutIcon />
             </ListItemIcon>
 

@@ -46,8 +46,11 @@ namespace CompoundResearchAPI.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
                 ?? User.FindFirstValue("sub");
 
-            var query = _context.QueryHistories.AsQueryable();
-            if (!string.IsNullOrEmpty(userId))
+            bool isReviewerOrAdmin = User.IsInRole(Models.Enums.UserRole.Reviewer) || User.IsInRole(Models.Enums.UserRole.Administrator);
+
+            var query = _context.QueryHistories.Include(q => q.User).AsQueryable();
+
+            if (!isReviewerOrAdmin && !string.IsNullOrEmpty(userId))
             {
                 query = query.Where(q => q.UserId == userId);
             }
@@ -60,7 +63,10 @@ namespace CompoundResearchAPI.Controllers
                     q.QuestionText,
                     q.AnswerText,
                     q.SourceChunkIds,
-                    q.CreatedAt
+                    q.CreatedAt,
+                    q.UserId,
+                    UserEmail = q.User != null ? q.User.Email : null,
+                    UserFullName = q.User != null ? q.User.FullName : null
                 })
                 .ToListAsync();
 
