@@ -40,38 +40,45 @@ namespace CompoundResearchAPI.Controllers
         }
 
         // GET api/query/history
-        [HttpGet("history")]
-        public async Task<ActionResult<ApiResponse<List<object>>>> GetHistory()
+     // GET api/query/history
+[HttpGet("history")]
+public async Task<ActionResult<ApiResponse<List<object>>>> GetHistory()
+{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+        ?? User.FindFirstValue("sub");
+
+    if (string.IsNullOrEmpty(userId))
+    {
+        return Unauthorized(
+            ApiResponse<List<object>>.FailureResponse(
+                "Unable to identify the current user."
+            )
+        );
+    }
+
+    var history = await _context.QueryHistories
+        .Include(q => q.User)
+        .Where(q => q.UserId == userId)
+        .OrderByDescending(q => q.CreatedAt)
+        .Select(q => new
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-                ?? User.FindFirstValue("sub");
+            q.Id,
+            q.QuestionText,
+            q.AnswerText,
+            q.SourceChunkIds,
+            q.CreatedAt,
+            q.UserId,
+            UserEmail = q.User != null ? q.User.Email : null,
+            UserFullName = q.User != null ? q.User.FullName : null
+        })
+        .ToListAsync();
 
-            bool isReviewerOrAdmin = User.IsInRole(Models.Enums.UserRole.Reviewer) || User.IsInRole(Models.Enums.UserRole.Administrator);
-
-            var query = _context.QueryHistories.Include(q => q.User).AsQueryable();
-
-            if (!isReviewerOrAdmin && !string.IsNullOrEmpty(userId))
-            {
-                query = query.Where(q => q.UserId == userId);
-            }
-
-            var history = await query
-                .OrderByDescending(q => q.CreatedAt)
-                .Select(q => new
-                {
-                    q.Id,
-                    q.QuestionText,
-                    q.AnswerText,
-                    q.SourceChunkIds,
-                    q.CreatedAt,
-                    q.UserId,
-                    UserEmail = q.User != null ? q.User.Email : null,
-                    UserFullName = q.User != null ? q.User.FullName : null
-                })
-                .ToListAsync();
-
-            return Ok(ApiResponse<List<object>>.SuccessResponse(history.Cast<object>().ToList()));
-        }
+    return Ok(
+        ApiResponse<List<object>>.SuccessResponse(
+            history.Cast<object>().ToList()
+        )
+    );
+}
     }
 }
 

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Catalyst agent avatar">
+  <title>Catalyst</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#132B4C"/>
+      <stop offset="100%" stop-color="#12594F"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#17B8A6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#17B8A6" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+
+  <!-- badge background -->
+  <circle cx="120" cy="120" r="120" fill="url(#bg)"/>
+
+  <!-- flask liquid fill -->
+  <path d="M108,108 L132,108 L166,186 Q120,199 74,186 Z" fill="url(#liquid)"/>
+
+  <!-- flask outline -->
+  <path d="M103,58 L137,58 L137,106 L172,188 Q120,203 68,188 L103,106 Z"
+        fill="none" stroke="#F6F8FA" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- neck rim -->
+  <line x1="100" y1="58" x2="140" y2="58" stroke="#F6F8FA" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- rising molecule bubbles -->
+  <circle cx="116" cy="140" r="6" fill="#F6F8FA"/>
+  <circle cx="132" cy="122" r="4.5" fill="#F6F8FA" opacity="0.85"/>
+  <circle cx="104" cy="160" r="5" fill="#F6F8FA" opacity="0.8"/>
+  <circle cx="140" cy="150" r="3.5" fill="#F6F8FA" opacity="0.7"/>
+
+  <!-- catalytic spark -->
+  <path d="M172,44 L177,58 L191,63 L177,68 L172,82 L167,68 L153,63 L167,58 Z" fill="#F2A65A"/>
+</svg>

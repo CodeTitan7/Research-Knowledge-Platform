@@ -1,0 +1,13 @@
+<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Molequery icon">
+  <title>Molequery icon</title>
+  <g transform="translate(6, 34)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="90,54 129.8,77 129.8,123 90,146 50.2,123 50.2,77"
+               stroke="#10233F" stroke-width="9"/>
+      <line x1="129.8" y1="77" x2="169.6" y2="54" stroke="#17B8A6" stroke-width="9"/>
+      <circle cx="169.6" cy="54" r="22" stroke="#17B8A6" stroke-width="9" fill="#F6F8FA"/>
+      <line x1="185" y1="69.4" x2="199.5" y2="83.9" stroke="#17B8A6" stroke-width="9"/>
+    </g>
+    <circle cx="129.8" cy="77" r="7" fill="#F2A65A"/>
+  </g>
+</svg>
