@@ -1,8 +1,10 @@
+using CompoundResearchAPI.Data;
 using CompoundResearchAPI.Helpers;
 using CompoundResearchAPI.Models.DTOs;
 using CompoundResearchAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace CompoundResearchAPI.Controllers
@@ -13,7 +15,13 @@ namespace CompoundResearchAPI.Controllers
     public class QueryController : ControllerBase
     {
         private readonly IRagService _ragService;
-        public QueryController(IRagService ragService) => _ragService = ragService;
+        private readonly ApplicationDbContext _context;
+
+        public QueryController(IRagService ragService, ApplicationDbContext context)
+        {
+            _ragService = ragService;
+            _context = context;
+        }
 
         // POST api/query/ask
         [HttpPost("ask")]
@@ -24,10 +32,53 @@ namespace CompoundResearchAPI.Controllers
                     ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList()));
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                ?? User.FindFirstValue("sub")
                 ?? throw new UnauthorizedAccessException("Unable to identify the current user.");
 
             var response = await _ragService.AskAsync(request, userId);
             return Ok(ApiResponse<QueryResponseDto>.SuccessResponse(response));
         }
+
+        // GET api/query/history
+     // GET api/query/history
+[HttpGet("history")]
+public async Task<ActionResult<ApiResponse<List<object>>>> GetHistory()
+{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+        ?? User.FindFirstValue("sub");
+
+    if (string.IsNullOrEmpty(userId))
+    {
+        return Unauthorized(
+            ApiResponse<List<object>>.FailureResponse(
+                "Unable to identify the current user."
+            )
+        );
+    }
+
+    var history = await _context.QueryHistories
+        .Include(q => q.User)
+        .Where(q => q.UserId == userId)
+        .OrderByDescending(q => q.CreatedAt)
+        .Select(q => new
+        {
+            q.Id,
+            q.QuestionText,
+            q.AnswerText,
+            q.SourceChunkIds,
+            q.CreatedAt,
+            q.UserId,
+            UserEmail = q.User != null ? q.User.Email : null,
+            UserFullName = q.User != null ? q.User.FullName : null
+        })
+        .ToListAsync();
+
+    return Ok(
+        ApiResponse<List<object>>.SuccessResponse(
+            history.Cast<object>().ToList()
+        )
+    );
+}
     }
 }
+

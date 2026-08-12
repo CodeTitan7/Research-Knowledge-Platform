@@ -24,7 +24,7 @@ namespace CompoundResearchAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = UserRole.Administrator)]
+        [Authorize(Roles = $"{UserRole.Reviewer},{UserRole.Administrator}")]
         public async Task<ActionResult<ApiResponse<Target>>> Create(Target target)
         {
             _context.Targets.Add(target);
