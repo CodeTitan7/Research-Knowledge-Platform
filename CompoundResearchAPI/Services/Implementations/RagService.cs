@@ -191,7 +191,15 @@ namespace CompoundResearchAPI.Services.Implementations
                             parts = new[] { new { text = $"Sources:\n{contextBlock}\n\nQuestion: {question}" } }
                         }
                     },
-                    generationConfig = new { maxOutputTokens = 600 }
+                    generationConfig = new
+                    {
+                        maxOutputTokens = 2048
+                        // Note: thinkingConfig was attempted here to cap internal "thinking" tokens,
+                        // but caused generateContent to fail on every call (confirmed via repeated
+                        // extractive-fallback responses across both normal and edge-case questions).
+                        // Removed — this API/model version likely doesn't accept that field in this
+                        // shape. maxOutputTokens alone at 2048 has been sufficient for full answers.
+                    }
                 };
 
                 var request = new HttpRequestMessage(HttpMethod.Post, url)
@@ -205,12 +213,29 @@ namespace CompoundResearchAPI.Services.Implementations
                 using var stream = await response.Content.ReadAsStreamAsync();
                 using var doc = await JsonDocument.ParseAsync(stream);
 
-                return doc.RootElement
-                    .GetProperty("candidates")[0]
+                var candidate = doc.RootElement.GetProperty("candidates")[0];
+
+                // Diagnostic: log why generation stopped. "MAX_TOKENS" confirms the answer was
+                // cut off by the token budget; "STOP" means the model finished normally; anything
+                // else is worth investigating.
+                if (candidate.TryGetProperty("finishReason", out var finishReasonProp))
+                    _logger.LogInformation("Gemini generateContent finishReason: {FinishReason}", finishReasonProp.GetString());
+
+                // Gemini can split the answer across multiple entries in content.parts (especially
+                // for longer, structured responses). Reading only parts[0] silently truncates the
+                // answer whenever this happens — concatenate all parts' text instead.
+                var parts = candidate
                     .GetProperty("content")
-                    .GetProperty("parts")[0]
-                    .GetProperty("text")
-                    .GetString() ?? "";
+                    .GetProperty("parts");
+
+                var answerBuilder = new StringBuilder();
+                foreach (var part in parts.EnumerateArray())
+                {
+                    if (part.TryGetProperty("text", out var textProp))
+                        answerBuilder.Append(textProp.GetString());
+                }
+
+                return answerBuilder.ToString();
             }
             catch (Exception ex)
             {
