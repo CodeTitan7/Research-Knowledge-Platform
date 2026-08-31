@@ -15,6 +15,7 @@ import CompoundDetails from "./pages/CompoundDetails";
 import CompoundForm from "./pages/CompoundForm";
 import Documents from "./pages/Documents";
 import DocumentDetails from "./pages/DocumentDetails";
+import CompoundComparison from "./pages/CompoundComparison";
 import DocumentUpload from "./pages/DocumentUpload";
 import Research from "./pages/Research";
 import QueryHistory from "./pages/QueryHistory";
@@ -78,6 +79,10 @@ function AppRoutes() {
             </RoleProtectedRoute>
           }
         />
+        <Route
+  path="/compounds/compare"
+  element={<CompoundComparison />}
+/>
         <Route path="/documents" element={<Documents />} />
         <Route
           path="/documents/upload"
